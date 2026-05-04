@@ -1,12 +1,57 @@
 import Navbar from "@/components/Navbar.js";
 import "./home.css";
 
+const courseCategories = [
+  {
+    icon: "💻",
+    title: "IT & Software",
+    text: "Web development, coding, systems, and digital tools.",
+  },
+  {
+    icon: "📊",
+    title: "Data & Analytics",
+    text: "Excel, SQL, data science, and business intelligence.",
+  },
+  {
+    icon: "🤖",
+    title: "AI & Digital Tools",
+    text: "AI productivity, prompt skills, and automation.",
+  },
+  {
+    icon: "🎨",
+    title: "Creative Skills",
+    text: "Design, content creation, branding, and media.",
+  },
+  {
+    icon: "💼",
+    title: "Career Readiness",
+    text: "CV building, interviews, workplace skills, and growth.",
+  },
+  {
+    icon: "📈",
+    title: "Business Skills",
+    text: "Entrepreneurship, marketing, sales, and leadership.",
+  },
+];
+
+const partnerCompanies = [
+  "Google",
+  "Microsoft",
+  "Meta",
+  "IBM",
+  "Cisco",
+  "AWS",
+  "HubSpot",
+  "Coursera",
+];
+
 export default function Home() {
   return (
     <>
       <Navbar />
 
       <main className="home-page">
+        {/* HERO */}
         <section className="hero-section">
           <div className="hero-content">
             <span className="hero-badge">Your career journey starts here</span>
@@ -33,35 +78,58 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-card">
-            <h3>Popular Career Paths</h3>
-
-            <div className="career-item">
-              <span>💻</span>
+          <div className="hero-visual-card">
+            <div className="mini-card active">
+              <span>🎯</span>
               <div>
-                <h4>Software Development</h4>
-                <p>Web, apps, backend & AI tools</p>
+                <h4>Career Matching</h4>
+                <p>Discover paths that fit your strengths.</p>
               </div>
             </div>
 
-            <div className="career-item">
-              <span>📊</span>
+            <div className="mini-card">
+              <span>📚</span>
               <div>
-                <h4>Data & Analytics</h4>
-                <p>Data science, Excel, SQL & BI</p>
+                <h4>Certified Courses</h4>
+                <p>Learn practical skills for real careers.</p>
               </div>
             </div>
 
-            <div className="career-item">
-              <span>🎨</span>
+            <div className="mini-card">
+              <span>🤖</span>
               <div>
-                <h4>Creative Digital Skills</h4>
-                <p>Design, content, branding & media</p>
+                <h4>AI Coaching</h4>
+                <p>Get guided support while learning.</p>
               </div>
             </div>
           </div>
         </section>
 
+        {/* POPULAR CAREER PATHS / COURSE CATEGORIES */}
+        <section className="career-paths-section">
+          <div className="career-paths-text">
+            <span>Popular career paths</span>
+            <h2>Explore skills that can shape your future</h2>
+            <p>
+              Browse practical course categories built around real career goals.
+              Start with what interests you, then grow step by step.
+            </p>
+            <button>View All Categories</button>
+          </div>
+
+          <div className="course-carousel">
+            {courseCategories.map((category) => (
+              <div className="course-category-card" key={category.title}>
+                <span>{category.icon}</span>
+                <h3>{category.title}</h3>
+                <p>{category.text}</p>
+                <a href="/explore-courses">Explore path</a>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* STATS */}
         <section className="stats-section">
           <div>
             <h2>2,000+</h2>
@@ -84,23 +152,65 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="categories-section">
+        {/* TRUSTED CLIENTS */}
+        <section className="trusted-section">
+          <span>Trusted learning ecosystem</span>
+          <h2>Trusted by learners, teams, and growing businesses</h2>
+          <p>
+            Sokwe-b connects learners with practical skills aligned with the
+            tools, platforms, and companies shaping the modern workplace.
+          </p>
+        </section>
+
+        {/* COMPANY CAROUSEL */}
+        <section className="company-carousel-section">
+          <div className="company-carousel">
+            {partnerCompanies.map((company) => (
+              <div className="company-card" key={company}>
+                {company}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* WHY CHOOSE US */}
+        <section className="why-section">
           <div className="section-heading">
-            <span>Explore categories</span>
-            <h2>Practical skills for modern careers</h2>
+            <span>Why Sokwe-b</span>
+            <h2>Built for learners who need direction, not confusion</h2>
             <p>
-              Choose from career-focused courses designed to help learners gain
-              useful, employable skills.
+              We combine course discovery, career guidance, and AI coaching to
+              help learners make smarter education and career choices.
             </p>
           </div>
 
-          <div className="category-grid">
-            <div className="category-card">💻 IT & Software</div>
-            <div className="category-card">📈 Business Skills</div>
-            <div className="category-card">🤖 AI & Digital Tools</div>
-            <div className="category-card">🎨 Design & Creative</div>
-            <div className="category-card">🗣 Communication</div>
-            <div className="category-card">💼 Career Readiness</div>
+          <div className="why-grid">
+            <div className="why-card">
+              <span>🧭</span>
+              <h3>Career-first learning</h3>
+              <p>
+                Courses are organized around career paths, making it easier to
+                know what to learn and why.
+              </p>
+            </div>
+
+            <div className="why-card">
+              <span>⚡</span>
+              <h3>Practical skill focus</h3>
+              <p>
+                Learners can explore real-world skills useful for jobs,
+                freelancing, business, and personal growth.
+              </p>
+            </div>
+
+            <div className="why-card">
+              <span>🤝</span>
+              <h3>Guidance and support</h3>
+              <p>
+                Career guidance and AI coaching help learners avoid feeling lost
+                when choosing their path.
+              </p>
+            </div>
           </div>
         </section>
       </main>

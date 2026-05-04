@@ -1,23 +1,26 @@
 .home-page {
   background: #f4f7fc;
   color: #0f172a;
+  overflow-x: hidden;
 }
 
 /* HERO */
 .hero-section {
-  min-height: calc(100vh - 76px);
-  padding: 80px 28px;
+  min-height: calc(100vh - 72px);
+  padding: 95px 28px 90px;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
   gap: 50px;
+
   background:
-    radial-gradient(circle at top right, rgba(44, 199, 201, 0.35), transparent 35%),
-    linear-gradient(135deg, #123a8f 0%, #1e56c5 55%, #2cc7c9 100%);
+    radial-gradient(circle at 12% 20%, rgba(88, 210, 212, 0.24), transparent 28%),
+    radial-gradient(circle at 80% 18%, rgba(46, 122, 229, 0.32), transparent 30%),
+    linear-gradient(135deg, #123a8f 0%, #1e56c5 52%, #2cc7c9 100%);
 }
 
 .hero-content {
-  max-width: 760px;
+  max-width: 780px;
   color: white;
 }
 
@@ -25,16 +28,16 @@
   display: inline-block;
   padding: 9px 18px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.26);
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 22px;
 }
 
 .hero-content h1 {
-  font-size: clamp(2.4rem, 6vw, 5rem);
-  line-height: 1.05;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.04;
   letter-spacing: -2px;
   margin-bottom: 22px;
 }
@@ -63,6 +66,7 @@
   outline: none;
   padding: 0 18px;
   font-size: 1rem;
+  color: #0f172a;
 }
 
 .hero-search button {
@@ -70,7 +74,7 @@
   border-radius: 999px;
   background: #123a8f;
   color: white;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .hero-buttons {
@@ -83,7 +87,7 @@
 .secondary-btn {
   padding: 14px 24px;
   border-radius: 999px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .primary-btn {
@@ -97,49 +101,157 @@
   border: 1px solid rgba(255, 255, 255, 0.55);
 }
 
-/* RIGHT HERO CARD */
-.hero-card {
-  background: rgba(255, 255, 255, 0.94);
-  padding: 28px;
-  border-radius: 28px;
+/* HERO RIGHT VISUAL */
+.hero-visual-card {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 24px;
+  border-radius: 32px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
 }
 
-.hero-card h3 {
-  color: #123a8f;
-  margin-bottom: 20px;
-  font-size: 1.4rem;
-}
-
-.career-item {
+.mini-card {
   display: flex;
   gap: 14px;
   align-items: flex-start;
-  background: #f4f7fc;
-  border: 1px solid #d7e0ee;
-  border-radius: 18px;
-  padding: 16px;
-  margin-bottom: 14px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 22px;
+  padding: 18px;
+  margin-bottom: 16px;
+  color: white;
 }
 
-.career-item span {
+.mini-card.active {
+  background: rgba(255, 255, 255, 0.92);
+  color: #0f172a;
+}
+
+.mini-card span {
   font-size: 1.8rem;
 }
 
-.career-item h4 {
-  color: #0f172a;
-  margin-bottom: 5px;
+.mini-card h4 {
+  margin-bottom: 6px;
 }
 
-.career-item p {
+.mini-card p {
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: inherit;
+  opacity: 0.78;
+}
+
+/* CAREER PATHS SECTION */
+.career-paths-section {
+  padding: 85px 28px;
+  display: grid;
+  grid-template-columns: 0.34fr 0.66fr;
+  gap: 38px;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at left, rgba(44, 199, 201, 0.16), transparent 35%),
+    #f4f7fc;
+}
+
+.career-paths-text {
+  max-width: 360px;
+}
+
+.career-paths-text span,
+.trusted-section span,
+.section-heading span {
+  color: #1e56c5;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 1.3px;
+}
+
+.career-paths-text h2 {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  color: #123a8f;
+  margin: 12px 0;
+  line-height: 1.08;
+}
+
+.career-paths-text p {
   color: #6b7a99;
-  font-size: 0.92rem;
+  line-height: 1.75;
+  margin-bottom: 22px;
+}
+
+.career-paths-text button {
+  background: #123a8f;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.course-carousel {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 12px 2px 20px;
+}
+
+.course-carousel::-webkit-scrollbar,
+.company-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.course-carousel::-webkit-scrollbar-thumb,
+.company-carousel::-webkit-scrollbar-thumb {
+  background: #c7d5ea;
+  border-radius: 999px;
+}
+
+.course-category-card {
+  min-width: 255px;
+  scroll-snap-align: start;
+  background: white;
+  border: 1px solid #d7e0ee;
+  border-radius: 26px;
+  padding: 26px;
+  box-shadow: 0 16px 35px rgba(18, 58, 143, 0.08);
+  transition: 0.25s ease;
+}
+
+.course-category-card:hover {
+  transform: translateY(-6px);
+  border-color: #2cc7c9;
+}
+
+.course-category-card span {
+  font-size: 2rem;
+}
+
+.course-category-card h3 {
+  color: #123a8f;
+  margin: 16px 0 10px;
+}
+
+.course-category-card p {
+  color: #6b7a99;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+}
+
+.course-category-card a {
+  color: #1e56c5;
+  font-weight: 800;
 }
 
 /* STATS */
 .stats-section {
   max-width: 1180px;
-  margin: -45px auto 0;
+  margin: 0 auto;
   background: white;
   border: 1px solid #d7e0ee;
   border-radius: 26px;
@@ -147,9 +259,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 18px 45px rgba(18, 58, 143, 0.12);
+  box-shadow: 0 18px 45px rgba(18, 58, 143, 0.1);
 }
 
 .stats-section div {
@@ -163,34 +273,76 @@
 
 .stats-section p {
   color: #6b7a99;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-/* CATEGORIES */
-.categories-section {
-  padding: 90px 28px;
-  max-width: 1180px;
+/* TRUSTED */
+.trusted-section {
+  max-width: 780px;
   margin: auto;
+  padding: 90px 28px 30px;
+  text-align: center;
+}
+
+.trusted-section h2 {
+  color: #123a8f;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 12px 0;
+  line-height: 1.1;
+}
+
+.trusted-section p {
+  color: #6b7a99;
+  line-height: 1.75;
+}
+
+/* COMPANY CAROUSEL */
+.company-carousel-section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px 28px 80px;
+}
+
+.company-carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 10px 2px 18px;
+  scroll-snap-type: x mandatory;
+}
+
+.company-card {
+  min-width: 170px;
+  scroll-snap-align: start;
+  background: white;
+  border: 1px solid #d7e0ee;
+  color: #123a8f;
+  font-weight: 900;
+  text-align: center;
+  padding: 22px 28px;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(18, 58, 143, 0.07);
+}
+
+/* WHY SECTION */
+.why-section {
+  padding: 90px 28px;
+  background:
+    radial-gradient(circle at top right, rgba(44, 199, 201, 0.14), transparent 36%),
+    #ffffff;
 }
 
 .section-heading {
   text-align: center;
-  max-width: 700px;
+  max-width: 760px;
   margin: 0 auto 42px;
-}
-
-.section-heading span {
-  color: #2cc7c9;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 0.82rem;
-  letter-spacing: 1.4px;
 }
 
 .section-heading h2 {
   font-size: clamp(2rem, 4vw, 3.2rem);
   color: #123a8f;
   margin: 12px 0;
+  line-height: 1.12;
 }
 
 .section-heading p {
@@ -198,33 +350,44 @@
   line-height: 1.7;
 }
 
-.category-grid {
+.why-grid {
+  max-width: 1180px;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 22px;
 }
 
-.category-card {
-  background: white;
+.why-card {
+  background: #f4f7fc;
   border: 1px solid #d7e0ee;
-  border-radius: 22px;
+  border-radius: 26px;
   padding: 28px;
-  font-weight: 800;
-  color: #123a8f;
-  box-shadow: 0 14px 35px rgba(18, 58, 143, 0.08);
-  transition: 0.25s ease;
 }
 
-.category-card:hover {
-  transform: translateY(-6px);
-  border-color: #2cc7c9;
+.why-card span {
+  font-size: 2rem;
+}
+
+.why-card h3 {
+  margin: 16px 0 10px;
+  color: #123a8f;
+}
+
+.why-card p {
+  color: #6b7a99;
+  line-height: 1.7;
 }
 
 /* RESPONSIVE */
-@media (max-width: 950px) {
-  .hero-section {
+@media (max-width: 980px) {
+  .hero-section,
+  .career-paths-section {
     grid-template-columns: 1fr;
-    padding: 70px 20px;
+  }
+
+  .career-paths-text {
+    max-width: 720px;
   }
 
   .stats-section {
@@ -232,12 +395,16 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .category-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .why-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 620px) {
+  .hero-section {
+    padding: 70px 20px;
+  }
+
   .hero-search {
     flex-direction: column;
     border-radius: 22px;
@@ -252,8 +419,11 @@
     width: 100%;
   }
 
-  .stats-section,
-  .category-grid {
+  .stats-section {
     grid-template-columns: 1fr;
+  }
+
+  .course-category-card {
+    min-width: 230px;
   }
 }
