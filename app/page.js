@@ -79,30 +79,30 @@ export default function Home() {
           </div>
 
           <div className="hero-visual-card">
-            <div className="mini-card active">
-              <span>🎯</span>
-              <div>
-                <h4>Career Matching</h4>
-                <p>Discover paths that fit your strengths.</p>
-              </div>
-            </div>
+  <div className="mini-card active">
+    <span>📚</span>
+    <div>
+      <h4>Certified Courses</h4>
+      <p>Learn practical skills for real careers.</p>
+    </div>
+  </div>
 
-            <div className="mini-card">
-              <span>📚</span>
-              <div>
-                <h4>Certified Courses</h4>
-                <p>Learn practical skills for real careers.</p>
-              </div>
-            </div>
+  <div className="mini-card">
+    <span>🎯</span>
+    <div>
+      <h4>Career Matching</h4>
+      <p>Discover paths that fit your strengths.</p>
+    </div>
+  </div>
 
-            <div className="mini-card">
-              <span>🤖</span>
-              <div>
-                <h4>AI Coaching</h4>
-                <p>Get guided support while learning.</p>
-              </div>
-            </div>
-          </div>
+  <div className="mini-card">
+    <span>🤖</span>
+    <div>
+      <h4>AI Coaching</h4>
+      <p>Get guided support while learning.</p>
+    </div>
+  </div>
+</div>
         </section>
 
         {/* POPULAR CAREER PATHS / COURSE CATEGORIES */}
