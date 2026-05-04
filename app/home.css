@@ -1,0 +1,259 @@
+.home-page {
+  background: #f4f7fc;
+  color: #0f172a;
+}
+
+/* HERO */
+.hero-section {
+  min-height: calc(100vh - 76px);
+  padding: 80px 28px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 50px;
+  background:
+    radial-gradient(circle at top right, rgba(44, 199, 201, 0.35), transparent 35%),
+    linear-gradient(135deg, #123a8f 0%, #1e56c5 55%, #2cc7c9 100%);
+}
+
+.hero-content {
+  max-width: 760px;
+  color: white;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 22px;
+}
+
+.hero-content p {
+  max-width: 650px;
+  font-size: 1.12rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 28px;
+}
+
+.hero-search {
+  max-width: 640px;
+  display: flex;
+  background: white;
+  padding: 8px;
+  border-radius: 999px;
+  margin-bottom: 22px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+}
+
+.hero-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 18px;
+  font-size: 1rem;
+}
+
+.hero-search button {
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: #123a8f;
+  color: white;
+  font-weight: 700;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.primary-btn {
+  background: white;
+  color: #123a8f;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+/* RIGHT HERO CARD */
+.hero-card {
+  background: rgba(255, 255, 255, 0.94);
+  padding: 28px;
+  border-radius: 28px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+}
+
+.hero-card h3 {
+  color: #123a8f;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.career-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #f4f7fc;
+  border: 1px solid #d7e0ee;
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.career-item span {
+  font-size: 1.8rem;
+}
+
+.career-item h4 {
+  color: #0f172a;
+  margin-bottom: 5px;
+}
+
+.career-item p {
+  color: #6b7a99;
+  font-size: 0.92rem;
+}
+
+/* STATS */
+.stats-section {
+  max-width: 1180px;
+  margin: -45px auto 0;
+  background: white;
+  border: 1px solid #d7e0ee;
+  border-radius: 26px;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 18px 45px rgba(18, 58, 143, 0.12);
+}
+
+.stats-section div {
+  text-align: center;
+}
+
+.stats-section h2 {
+  color: #1e56c5;
+  font-size: 2rem;
+}
+
+.stats-section p {
+  color: #6b7a99;
+  font-weight: 600;
+}
+
+/* CATEGORIES */
+.categories-section {
+  padding: 90px 28px;
+  max-width: 1180px;
+  margin: auto;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 42px;
+}
+
+.section-heading span {
+  color: #2cc7c9;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 1.4px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #123a8f;
+  margin: 12px 0;
+}
+
+.section-heading p {
+  color: #6b7a99;
+  line-height: 1.7;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.category-card {
+  background: white;
+  border: 1px solid #d7e0ee;
+  border-radius: 22px;
+  padding: 28px;
+  font-weight: 800;
+  color: #123a8f;
+  box-shadow: 0 14px 35px rgba(18, 58, 143, 0.08);
+  transition: 0.25s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  border-color: #2cc7c9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    padding: 70px 20px;
+  }
+
+  .stats-section {
+    margin: 0 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .hero-search {
+    flex-direction: column;
+    border-radius: 22px;
+    gap: 8px;
+  }
+
+  .hero-search input {
+    padding: 14px;
+  }
+
+  .hero-search button {
+    width: 100%;
+  }
+
+  .stats-section,
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}
