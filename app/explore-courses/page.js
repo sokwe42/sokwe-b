@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar.js";
-import { courses } from "@/data/courses.js";
+import { courses } from "@/app/data/courses.js";
 import "./explore.css";
 
 const categories = [
