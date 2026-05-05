@@ -1,0 +1,315 @@
+.ai-page {
+  background: #f4f7fc;
+  color: #0f172a;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.ai-hero {
+  min-height: calc(100vh - 72px);
+  padding: 100px 28px 90px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 50px;
+  background:
+    radial-gradient(circle at 12% 20%, rgb(15, 1, 66), transparent 28%),
+    radial-gradient(circle at 80% 18%, rgb(6, 44, 97), transparent 22%),
+    linear-gradient(135deg, #001133 0%, #001133 100%);
+  color: white;
+}
+
+.ai-hero-content {
+  max-width: 780px;
+}
+
+.ai-hero-content span,
+.section-heading span,
+.process-left span,
+.book-section span,
+.featured-card > span {
+  display: inline-block;
+  color: #58d2d4;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 1.3px;
+  margin-bottom: 14px;
+}
+
+.ai-hero-content h1 {
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 1.04;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.ai-hero-content p {
+  max-width: 680px;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+}
+
+.ai-hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ai-hero-buttons a,
+.book-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 900;
+  background: white;
+  color: #123a8f;
+}
+
+.outline-btn {
+  background: transparent !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+/* HERO CARD */
+.ai-hero-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 32px;
+  padding: 28px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.22);
+}
+
+.ai-hero-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+}
+
+.ai-check {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: 18px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.ai-check.active {
+  background: white;
+  color: #123a8f;
+}
+
+/* COACHING AREAS */
+.coaching-section {
+  padding: 90px 28px;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.section-heading span,
+.process-left span,
+.book-section span,
+.featured-card > span {
+  color: #1e56c5;
+}
+
+.section-heading h2,
+.process-left h2,
+.book-section h2,
+.featured-card h2 {
+  color: #123a8f;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.12;
+  margin-bottom: 12px;
+}
+
+.section-heading p,
+.process-left p,
+.book-section p,
+.featured-card p {
+  color: #6b7a99;
+  line-height: 1.75;
+}
+
+.coaching-grid {
+  max-width: 1180px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.coaching-card {
+  background: white;
+  border: 1px solid #d7e0ee;
+  border-radius: 26px;
+  padding: 28px;
+  box-shadow: 0 16px 35px rgba(18, 58, 143, 0.07);
+}
+
+.coaching-card > span {
+  font-size: 2rem;
+}
+
+.coaching-card h3 {
+  color: #123a8f;
+  margin: 16px 0 10px;
+}
+
+.coaching-card p {
+  color: #6b7a99;
+  line-height: 1.7;
+}
+
+/* PROCESS */
+.ai-process {
+  padding: 85px 28px;
+  display: grid;
+  grid-template-columns: 0.36fr 0.64fr;
+  gap: 38px;
+  align-items: center;
+  background: white;
+}
+
+.process-left {
+  max-width: 400px;
+}
+
+.process-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.process-item {
+  background: #f4f7fc;
+  border: 1px solid #d7e0ee;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(18, 58, 143, 0.06);
+}
+
+.process-item span {
+  display: inline-block;
+  color: #1e56c5;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.process-item p {
+  color: #123a8f;
+  font-weight: 900;
+}
+
+/* FEATURED SESSION */
+.ai-featured {
+  padding: 90px 28px;
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 28px;
+  align-items: stretch;
+  max-width: 1180px;
+  margin: auto;
+}
+
+.featured-card,
+.featured-points {
+  background: white;
+  border: 1px solid #d7e0ee;
+  border-radius: 30px;
+  padding: 32px;
+  box-shadow: 0 16px 35px rgba(18, 58, 143, 0.07);
+}
+
+.featured-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.featured-tags span {
+  background: #f4f7fc;
+  color: #123a8f;
+  font-weight: 800;
+  padding: 9px 13px;
+  border-radius: 999px;
+}
+
+.featured-points {
+  background:
+    radial-gradient(circle at top right, rgba(44, 199, 201, 0.18), transparent 34%),
+    #001133;
+  color: white;
+}
+
+.featured-points h3 {
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+}
+
+.featured-points ul {
+  padding-left: 20px;
+  display: grid;
+  gap: 12px;
+  line-height: 1.6;
+}
+
+/* BOOK SECTION */
+.book-section {
+  padding: 90px 28px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top right, rgba(44, 199, 201, 0.16), transparent 34%),
+    #ffffff;
+}
+
+.book-section h2 {
+  max-width: 780px;
+  margin: 12px auto;
+}
+
+.book-section p {
+  max-width: 720px;
+  margin: 0 auto 26px;
+}
+
+.book-btn {
+  background: #123a8f;
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+  .ai-hero,
+  .ai-process,
+  .ai-featured {
+    grid-template-columns: 1fr;
+  }
+
+  .coaching-grid,
+  .process-list {
+    grid-template-columns: 1fr;
+  }
+
+  .process-left {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 620px) {
+  .ai-hero {
+    padding: 80px 20px;
+  }
+}
