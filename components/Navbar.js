@@ -4,26 +4,38 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Search, ShoppingCart, User } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import "./navbar.css";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  // Runs only in the browser after page loads
+  const router = useRouter();
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
 
     handleScroll();
-
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    if (!searchTerm.trim()) return;
+
+    router.push(`/explore-courses?search=${encodeURIComponent(searchTerm)}`);
+    setSearchTerm("");
+    setOpen(false);
+  };
 
   return (
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
@@ -49,24 +61,32 @@ export default function Navbar() {
             Explore Courses
           </Link>
 
-          <div className="search-box">
+          <form className="search-box" onSubmit={handleSearch}>
             <Search size={18} />
-            <input type="text" placeholder="Search courses..." />
-          </div>
+            <input
+              type="text"
+              placeholder="Search courses..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </form>
         </div>
 
         {/* RIGHT SIDE */}
         <div className="nav-right">
           <nav className={`nav-links ${open ? "active" : ""}`}>
             <Link href="/career-guidance" onClick={() => setOpen(false)}>
-              Explore Courses
+              Career Guidance
             </Link>
+
             <Link href="/ai-coaching" onClick={() => setOpen(false)}>
               AI Coaching
             </Link>
+
             <Link href="/for-businesses" onClick={() => setOpen(false)}>
               For Businesses
             </Link>
+
             <Link href="/careers" onClick={() => setOpen(false)}>
               Careers
             </Link>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navbar from "@/components/Navbar.js";
 import "./home.css";
 
@@ -67,14 +68,22 @@ export default function Home() {
               success.
             </p>
 
-            <div className="hero-search">
-              <input type="text" placeholder="What do you want to learn?" />
-              <button>Search Courses</button>
-            </div>
+            <form className="hero-search" action="/explore-courses">
+  <input
+    type="text"
+    name="search"
+    placeholder="What do you want to learn?"
+  />
+  <button type="submit">Search Courses</button>
+</form>
 
             <div className="hero-buttons">
-              <button className="primary-btn">Explore Courses</button>
-              <button className="secondary-btn">Get Career Guidance</button>
+              <Link href="/explore-courses" className="primary-btn">
+                Explore Courses
+              </Link>
+              <Link href="/career-guidance" className="secondary-btn">
+                Get Career Guidance
+              </Link>
             </div>
           </div>
 
@@ -114,7 +123,9 @@ export default function Home() {
               Browse practical course categories built around real career goals.
               Start with what interests you, then grow step by step.
             </p>
-            <button>View All Categories</button>
+            <Link href="/explore-courses" className="category-btn">
+              View All Courses
+            </Link>
           </div>
 
           <div className="course-carousel">
@@ -123,7 +134,9 @@ export default function Home() {
                 <span>{category.icon}</span>
                 <h3>{category.title}</h3>
                 <p>{category.text}</p>
-                <a href="/explore-courses">Explore path</a>
+                <Link href="/explore-courses" className="category-btn">
+                  Explore Courses
+                </Link>
               </div>
             ))}
           </div>

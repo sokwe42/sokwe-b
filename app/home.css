@@ -427,3 +427,19 @@
     min-width: 230px;
   }
 }
+
+.primary-btn,
+.category-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.category-btn {
+  background: #123a8f;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 999px;
+  font-weight: 800;
+}
