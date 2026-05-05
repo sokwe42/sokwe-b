@@ -1,75 +1,24 @@
 "use client";
+
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar.js";
+import { courses } from "@/data/courses.js";
 import "./explore.css";
-
-const courses = [
-  {
-    title: "Web Development Foundations",
-    category: "IT & Software",
-    level: "Beginner",
-    duration: "8 weeks",
-    rating: "4.8",
-    students: "1,200+",
-    tag: "Popular",
-  },
-  {
-    title: "Data Analysis with Excel & SQL",
-    category: "Data & Analytics",
-    level: "Beginner",
-    duration: "6 weeks",
-    rating: "4.7",
-    students: "900+",
-    tag: "Career Path",
-  },
-  {
-    title: "AI Tools for Productivity",
-    category: "AI & Digital Tools",
-    level: "Beginner",
-    duration: "4 weeks",
-    rating: "4.9",
-    students: "700+",
-    tag: "New",
-  },
-  {
-    title: "Digital Marketing Essentials",
-    category: "Business Skills",
-    level: "Intermediate",
-    duration: "5 weeks",
-    rating: "4.6",
-    students: "850+",
-    tag: "Hot",
-  },
-  {
-    title: "Career Readiness Bootcamp",
-    category: "Career Readiness",
-    level: "Beginner",
-    duration: "3 weeks",
-    rating: "4.8",
-    students: "1,500+",
-    tag: "Recommended",
-  },
-  {
-    title: "Creative Design Basics",
-    category: "Creative Skills",
-    level: "Beginner",
-    duration: "5 weeks",
-    rating: "4.5",
-    students: "600+",
-    tag: "Creative",
-  },
-];
 
 const categories = [
   "All Courses",
-  "IT & Software",
-  "Data & Analytics",
-  "AI & Digital Tools",
-  "Business Skills",
-  "Creative Skills",
-  "Career Readiness",
+  "Accounting & Finance",
+  "Office & Productivity",
+  "Business & Entrepreneurship",
+  "Creative & Design",
+  "Cybersecurity",
+  "Education & Childcare",
+  "Food & Hospitality",
+  "Health & Wellbeing",
+  "Technology & Digital Skills",
+  "Software Development",
 ];
 
 export default function ExploreCourses() {
@@ -91,13 +40,17 @@ export default function ExploreCourses() {
     const search = searchTerm.toLowerCase();
 
     const matchesSearch =
-      course.title.toLowerCase().includes(search) ||
-      course.category.toLowerCase().includes(search) ||
-      course.level.toLowerCase().includes(search) ||
-      course.tag.toLowerCase().includes(search);
+      course.title?.toLowerCase().includes(search) ||
+      course.originalTitle?.toLowerCase().includes(search) ||
+      course.category?.toLowerCase().includes(search) ||
+      course.displayCategory?.toLowerCase().includes(search) ||
+      course.subcategory?.toLowerCase().includes(search) ||
+      course.level?.toLowerCase().includes(search) ||
+      course.tag?.toLowerCase().includes(search);
 
     const matchesCategory =
-      activeCategory === "All Courses" || course.category === activeCategory;
+      activeCategory === "All Courses" ||
+      course.displayCategory === activeCategory;
 
     return matchesSearch && matchesCategory;
   });
@@ -129,7 +82,6 @@ export default function ExploreCourses() {
       <Navbar />
 
       <main className="explore-page">
-        {/* FLAGSHIP LANDING */}
         <section className="flagship-landing">
           <div className="flagship-left">
             <span>Flagship Course</span>
@@ -156,7 +108,6 @@ export default function ExploreCourses() {
           </div>
         </section>
 
-        {/* COURSE SEARCH INTRO */}
         <section className="explore-hero small-hero">
           <div>
             <span className="explore-badge">Course Catalogue</span>
@@ -178,7 +129,6 @@ export default function ExploreCourses() {
           </div>
         </section>
 
-        {/* COURSES SECTION */}
         <section className="courses-layout">
           <aside className="filter-sidebar">
             <h3>Categories</h3>
@@ -197,18 +147,20 @@ export default function ExploreCourses() {
 
             <div className="filter-list">
               {categories
-                    .filter((cat) => cat !== "All Courses")
-                    .slice(0, 4)
-                    .map((category) => (
-                <button
-                  type="button"
-                  key={category}
-                  className={activeCategory === category ? "active-filter" : ""}
-                  onClick={() => setActiveCategory(category)}
-                >
-                  {category}
-                </button>
-              ))}
+                .filter((cat) => cat !== "All Courses")
+                .slice(0, 4)
+                .map((category) => (
+                  <button
+                    type="button"
+                    key={category}
+                    className={
+                      activeCategory === category ? "active-filter" : ""
+                    }
+                    onClick={() => setActiveCategory(category)}
+                  >
+                    {category}
+                  </button>
+                ))}
             </div>
           </aside>
 
@@ -236,7 +188,7 @@ export default function ExploreCourses() {
             <div className="courses-grid">
               {filteredCourses.length > 0 ? (
                 filteredCourses.map((course) => (
-                  <article className="course-card" key={course.title}>
+                  <article className="course-card" key={course.id}>
                     <div className="course-top">
                       <span className="course-tag">{course.tag}</span>
                       <span className="course-rating">⭐ {course.rating}</span>
@@ -244,13 +196,16 @@ export default function ExploreCourses() {
 
                     <div className="course-icon">📘</div>
 
-                    <p className="course-category">{course.category}</p>
+                    <p className="course-category">
+                      {course.displayCategory}
+                    </p>
+
                     <h3>{course.title}</h3>
 
                     <div className="course-meta">
                       <span>{course.level}</span>
                       <span>{course.duration}</span>
-                      <span>{course.students}</span>
+                      <span>{course.subcategory}</span>
                     </div>
 
                     <button type="button">View Course</button>
@@ -266,7 +221,6 @@ export default function ExploreCourses() {
           </section>
         </section>
 
-        {/* CLOSING SECTION */}
         <section className="course-closing">
           <span>Still unsure?</span>
           <h2>Let Sokwe-b help you choose the right path</h2>
@@ -276,15 +230,15 @@ export default function ExploreCourses() {
             your interests and goals.
           </p>
 
-<div className="closing-buttons">
-  <Link href="/career-guidance" className="primary-btn">
-    Get Career Guidance
-  </Link>
+          <div className="closing-buttons">
+            <Link href="/career-guidance" className="primary-btn">
+              Get Career Guidance
+            </Link>
 
-  <Link href="/ai-coaching" className="outline-btn">
-    Try AI Coaching
-  </Link>
-</div>
+            <Link href="/ai-coaching" className="outline-btn">
+              Try AI Coaching
+            </Link>
+          </div>
         </section>
       </main>
     </>
