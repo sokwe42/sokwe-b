@@ -1,0 +1,352 @@
+.career-page {
+  background: #f4f7fc;
+  color: #0f172a;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.career-hero {
+  min-height: calc(100vh - 72px);
+  padding: 100px 28px 90px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 50px;
+  background:
+    radial-gradient(circle at 12% 20%, rgb(15, 1, 66), transparent 28%),
+    radial-gradient(circle at 80% 18%, rgb(6, 44, 97), transparent 22%),
+    linear-gradient(135deg, #001133 0%, #001133 100%);
+  color: white;
+}
+
+.career-hero-content {
+  max-width: 760px;
+}
+
+.career-hero-content span,
+.section-heading span,
+.career-paths-left span,
+.career-cta span {
+  display: inline-block;
+  color: #58d2d4;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 1.3px;
+  margin-bottom: 14px;
+}
+
+.career-hero-content h1 {
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 1.04;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.career-hero-content p {
+  max-width: 660px;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 28px;
+}
+
+.career-hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.career-hero-buttons button,
+.career-cta button {
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 900;
+  background: white;
+  color: #123a8f;
+}
+
+.outline-btn {
+  background: transparent !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+/* HERO CARD */
+.career-hero-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 32px;
+  padding: 28px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.22);
+}
+
+.career-hero-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+}
+
+.journey-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: 18px;
+  margin-bottom: 12px;
+}
+
+.journey-item.active {
+  background: white;
+  color: #0f172a;
+}
+
+.journey-item span {
+  font-weight: 900;
+  color: #58d2d4;
+}
+
+.journey-item.active span {
+  color: #123a8f;
+}
+
+.journey-item p {
+  line-height: 1.55;
+}
+
+/* HOW IT WORKS */
+.guidance-section {
+  padding: 90px 28px;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #123a8f;
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  color: #6b7a99;
+  line-height: 1.7;
+}
+
+.guidance-grid {
+  max-width: 1180px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.guidance-card {
+  background: white;
+  border: 1px solid #d7e0ee;
+  border-radius: 26px;
+  padding: 28px;
+  box-shadow: 0 16px 35px rgba(18, 58, 143, 0.07);
+}
+
+.guidance-card > span {
+  font-size: 2rem;
+}
+
+.guidance-card h3 {
+  color: #123a8f;
+  margin: 16px 0 10px;
+}
+
+.guidance-card p {
+  color: #6b7a99;
+  line-height: 1.7;
+}
+
+/* CAREER PATHS */
+.career-paths {
+  padding: 85px 28px;
+  display: grid;
+  grid-template-columns: 0.34fr 0.66fr;
+  gap: 38px;
+  align-items: center;
+  background: white;
+}
+
+.career-paths-left {
+  max-width: 380px;
+}
+
+.career-paths-left span,
+.section-heading span,
+.career-cta span {
+  color: #1e56c5;
+}
+
+.career-paths-left h2 {
+  color: #123a8f;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.08;
+  margin-bottom: 14px;
+}
+
+.career-paths-left p {
+  color: #6b7a99;
+  line-height: 1.75;
+}
+
+.career-paths-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.career-path-card {
+  background: #f4f7fc;
+  border: 1px solid #d7e0ee;
+  border-radius: 22px;
+  padding: 24px;
+  color: #123a8f;
+  font-weight: 900;
+  box-shadow: 0 12px 30px rgba(18, 58, 143, 0.06);
+  transition: 0.25s ease;
+}
+
+.career-path-card:hover {
+  transform: translateY(-5px);
+  border-color: #2cc7c9;
+}
+
+/* CTA */
+.career-cta {
+  padding: 90px 28px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top right, rgba(44, 199, 201, 0.16), transparent 34%),
+    #f4f7fc;
+}
+
+.career-cta h2 {
+  max-width: 760px;
+  margin: 12px auto;
+  color: #123a8f;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.career-cta p {
+  color: #6b7a99;
+  margin-bottom: 26px;
+}
+
+.career-cta button {
+  background: #123a8f;
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+  .career-hero,
+  .career-paths {
+    grid-template-columns: 1fr;
+  }
+
+  .guidance-grid,
+  .career-paths-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .career-paths-left {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 620px) {
+  .career-hero {
+    padding: 80px 20px;
+  }
+}
+
+/* FORM SECTION */
+.career-form-section {
+  padding: 90px 28px;
+  background:
+    radial-gradient(circle at left, rgba(44, 199, 201, 0.12), transparent 35%),
+    #ffffff;
+}
+
+.form-container {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.form-container span {
+  color: #1e56c5;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 1.3px;
+}
+
+.form-container h2 {
+  color: #123a8f;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 12px 0;
+}
+
+.form-container p {
+  color: #6b7a99;
+  margin-bottom: 30px;
+}
+
+.career-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.career-form input,
+.career-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #d7e0ee;
+  background: #f4f7fc;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.career-form textarea {
+  resize: none;
+}
+
+.career-form button {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 999px;
+  background: #123a8f;
+  color: white;
+  font-weight: 800;
+  transition: 0.25s ease;
+}
+
+.career-form button:hover {
+  background: #0f2f75;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
