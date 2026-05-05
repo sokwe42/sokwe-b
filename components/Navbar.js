@@ -75,22 +75,30 @@ export default function Navbar() {
         {/* RIGHT SIDE */}
         <div className="nav-right">
           <nav className={`nav-links ${open ? "active" : ""}`}>
-            <Link href="/career-guidance" onClick={() => setOpen(false)}>
-              Career Guidance
-            </Link>
+<Link
+  href="/explore-courses"
+  className="mobile-only-link"
+  onClick={() => setOpen(false)}
+>
+  Explore Courses
+</Link>
 
-            <Link href="/ai-coaching" onClick={() => setOpen(false)}>
-              AI Coaching
-            </Link>
+  <Link href="/career-guidance" onClick={() => setOpen(false)}>
+    Career Guidance
+  </Link>
 
-            <Link href="/for-businesses" onClick={() => setOpen(false)}>
-              For Businesses
-            </Link>
+  <Link href="/ai-coaching" onClick={() => setOpen(false)}>
+    AI Coaching
+  </Link>
 
-            <Link href="/careers" onClick={() => setOpen(false)}>
-              Careers
-            </Link>
-          </nav>
+  <Link href="/for-businesses" onClick={() => setOpen(false)}>
+    For Businesses
+  </Link>
+
+  <Link href="/careers" onClick={() => setOpen(false)}>
+    Careers
+  </Link>
+</nav>
 
           <div className="nav-actions">
             <Link href="/cart" className="icon-btn" aria-label="Cart">

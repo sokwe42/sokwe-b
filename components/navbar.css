@@ -253,3 +253,12 @@
     height: 38px;
   }
 }
+.mobile-only-link {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .mobile-only-link {
+    display: block;
+  }
+}

@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar.js";
@@ -276,12 +276,15 @@ export default function ExploreCourses() {
             your interests and goals.
           </p>
 
-          <div className="closing-buttons">
-            <button type="button">Get Career Guidance</button>
-            <button type="button" className="outline-btn">
-              Try AI Coaching
-            </button>
-          </div>
+<div className="closing-buttons">
+  <Link href="/career-guidance" className="primary-btn">
+    Get Career Guidance
+  </Link>
+
+  <Link href="/ai-coaching" className="outline-btn">
+    Try AI Coaching
+  </Link>
+</div>
         </section>
       </main>
     </>
