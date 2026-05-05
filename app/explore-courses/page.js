@@ -77,6 +77,7 @@ export default function ExploreCourses() {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("All Courses");
+  const [sortBy, setSortBy] = useState("Popular");
 
   useEffect(() => {
     const querySearch = searchParams.get("search");
@@ -86,7 +87,7 @@ export default function ExploreCourses() {
     }
   }, [searchParams]);
 
-  const filteredCourses = courses.filter((course) => {
+  let filteredCourses = courses.filter((course) => {
     const search = searchTerm.toLowerCase();
 
     const matchesSearch =
@@ -101,15 +102,65 @@ export default function ExploreCourses() {
     return matchesSearch && matchesCategory;
   });
 
+  if (sortBy === "Highest rated") {
+    filteredCourses = [...filteredCourses].sort(
+      (a, b) => Number(b.rating) - Number(a.rating)
+    );
+  }
+
+  if (sortBy === "Newest") {
+    filteredCourses = [...filteredCourses].sort((a, b) => {
+      if (a.tag === "New") return -1;
+      if (b.tag === "New") return 1;
+      return 0;
+    });
+  }
+
+  if (sortBy === "Beginner friendly") {
+    filteredCourses = [...filteredCourses].sort((a, b) => {
+      if (a.level === "Beginner" && b.level !== "Beginner") return -1;
+      if (a.level !== "Beginner" && b.level === "Beginner") return 1;
+      return 0;
+    });
+  }
+
   return (
     <>
       <Navbar />
 
       <main className="explore-page">
-        <section className="explore-hero">
+        {/* FLAGSHIP LANDING */}
+        <section className="flagship-landing">
+          <div className="flagship-left">
+            <span>Flagship Course</span>
+            <h1>AI Career Starter Program</h1>
+            <p>
+              Learn how to use AI tools, discover your career path, and build
+              practical digital skills for modern work.
+            </p>
+
+            <div className="flagship-actions">
+              <button type="button">Start Learning</button>
+              <button type="button" className="outline-btn">
+                View Course Outline
+              </button>
+            </div>
+          </div>
+
+          <div className="flagship-right">
+            <h3>What this course helps with</h3>
+            <div className="flagship-point">🤖 AI tools for productivity</div>
+            <div className="flagship-point">🧭 Career path discovery</div>
+            <div className="flagship-point">📚 Beginner digital skills</div>
+            <div className="flagship-point">💼 Job and freelance readiness</div>
+          </div>
+        </section>
+
+        {/* COURSE SEARCH INTRO */}
+        <section className="explore-hero small-hero">
           <div>
-            <span className="explore-badge">Explore Courses</span>
-            <h1>Find courses built around real career paths</h1>
+            <span className="explore-badge">Course Catalogue</span>
+            <h1>Explore all courses</h1>
             <p>
               Search through practical courses and filter by category to find
               the path that fits your goals.
@@ -127,6 +178,7 @@ export default function ExploreCourses() {
           </div>
         </section>
 
+        {/* COURSES SECTION */}
         <section className="courses-layout">
           <aside className="filter-sidebar">
             <h3>Categories</h3>
@@ -144,8 +196,12 @@ export default function ExploreCourses() {
             </select>
 
             <div className="filter-list">
-              {categories.map((category) => (
+              {categories
+  .filter((cat) => cat !== "All Courses")
+  .slice(0, 4)
+  .map((category) => (
                 <button
+                  type="button"
                   key={category}
                   className={activeCategory === category ? "active-filter" : ""}
                   onClick={() => setActiveCategory(category)}
@@ -160,14 +216,20 @@ export default function ExploreCourses() {
             <div className="courses-header">
               <div>
                 <span>Course Catalogue</span>
-                <h2>{filteredCourses.length} courses found</h2>
+                <h2>
+                  {filteredCourses.length}{" "}
+                  {filteredCourses.length === 1 ? "course" : "courses"} found
+                </h2>
               </div>
 
-              <select>
-                <option>Sort by: Popular</option>
-                <option>Newest</option>
-                <option>Highest rated</option>
-                <option>Beginner friendly</option>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+              >
+                <option value="Popular">Sort by: Popular</option>
+                <option value="Newest">Newest</option>
+                <option value="Highest rated">Highest rated</option>
+                <option value="Beginner friendly">Beginner friendly</option>
               </select>
             </div>
 
@@ -191,7 +253,7 @@ export default function ExploreCourses() {
                       <span>{course.students}</span>
                     </div>
 
-                    <button>View Course</button>
+                    <button type="button">View Course</button>
                   </article>
                 ))
               ) : (
@@ -202,6 +264,24 @@ export default function ExploreCourses() {
               )}
             </div>
           </section>
+        </section>
+
+        {/* CLOSING SECTION */}
+        <section className="course-closing">
+          <span>Still unsure?</span>
+          <h2>Let Sokwe-b help you choose the right path</h2>
+          <p>
+            If you are not sure which course fits you, our career guidance and
+            AI coaching tools can help you discover the best direction based on
+            your interests and goals.
+          </p>
+
+          <div className="closing-buttons">
+            <button type="button">Get Career Guidance</button>
+            <button type="button" className="outline-btn">
+              Try AI Coaching
+            </button>
+          </div>
         </section>
       </main>
     </>
