@@ -197,9 +197,9 @@ export default function ExploreCourses() {
 
             <div className="filter-list">
               {categories
-  .filter((cat) => cat !== "All Courses")
-  .slice(0, 4)
-  .map((category) => (
+                    .filter((cat) => cat !== "All Courses")
+                    .slice(0, 4)
+                    .map((category) => (
                 <button
                   type="button"
                   key={category}
