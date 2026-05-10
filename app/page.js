@@ -179,48 +179,23 @@ export default function Home() {
 
   </div>
 
-  {/* BOTTOM SPLIT SECTION */}
-  <div className="trusted-bottom">
+<div className="trusted-bottom">
 
-    {/* LEFT SIDE */}
-    <div className="trusted-left">
-      <span className="support-tag">Supported by</span>
-    </div>
+  <p className="trusted-line">
+    <span className="support-tag">Supported by</span>
 
-    {/* RIGHT SIDE */}
-    <div className="trusted-right">
+    <span className="logo-row">
+      <img src="/logos/Raeng.png" alt="RAENG" />
+      <img src="/logos/Jasiri.png" alt="Jasiri" />
+      <img src="/logos/54Collective.png" alt="54 Collective" />
+      <img src="/logos/UON.png" alt="University of Nairobi" />
+      <img src="/logos/Multichoice.png" alt="Multichoice" />
+      <img src="/logos/Benz.png" alt="Mercedes Benz Fellowship" />
+    </span>
 
-      <div className="logo-cloud">
+  </p>
 
-        <div className="logo-item item1">
-          <img src="/logos/Raeng.png" alt="RAENG" />
-        </div>
-
-        <div className="logo-item item2">
-          <img src="/logos/Jasiri.png" alt="Jasiri" />
-        </div>
-
-        <div className="logo-item item3">
-          <img src="/logos/54Collective.png" alt="54 Collective" />
-        </div>
-
-        <div className="logo-item item4">
-          <img src="/logos/UON.png" alt="University of Nairobi" />
-        </div>
-
-        <div className="logo-item item5">
-          <img src="/logos/Multichoice.png" alt="Multichoice" />
-        </div>
-
-        <div className="logo-item item6">
-          <img src="/logos/Benz.png" alt="Mercedes Benz Fellowship" />
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
                 
