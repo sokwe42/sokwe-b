@@ -154,58 +154,68 @@ export default function Home() {
           </div>
         </section>
 
-{/* TRUSTED CLIENTS + SUPPORTERS WRAPPER */}
-<section className="trusted-wrapper">
+        {/* TRUSTED CLIENTS */}
+<section className="trusted-section">
 
-  {/* LEFT SIDE - TEXT */}
-  <div className="trusted-left">
+  {/* TOP CONTENT (FULL WIDTH) */}
+  <div className="trusted-top">
 
-    <div className="trusted-section">
-      <span>Trusted learning ecosystem</span>
+    <h2 className="trusted-title">
+      Trusted learning ecosystem
+    </h2>
 
-      <h2>
-        Trusted by learners, teams, and growing businesses
-      </h2>
+    <h3 className="trusted-subtitle">
+      Trusted by learners, teams, and growing businesses
+    </h3>
 
-      <p>
-        Sokwe-b connects learners with practical skills aligned with the
-        tools, platforms, and companies shaping the modern workplace.
-        Through collaborations with innovation hubs, academic institutions,
-        leadership fellowships, and digital ecosystems, Sokwe-b continues
-        building opportunities that empower future-ready learners across
-        technology, business, and creative industries.
-      </p>
-    </div>
+    <p className="trusted-text">
+      Sokwe-b connects learners with practical skills aligned with the
+      tools, platforms, and companies shaping the modern workplace.
+      Through collaborations with innovation hubs, academic institutions,
+      leadership fellowships, and digital ecosystems, Sokwe-b continues
+      building opportunities that empower future-ready learners across
+      technology, business, and creative industries.
+    </p>
 
   </div>
 
-  {/* RIGHT SIDE - LOGOS */}
-  <div className="trusted-right">
+  {/* BOTTOM SPLIT SECTION */}
+  <div className="trusted-bottom">
 
-    <div className="logo-cloud">
+    {/* LEFT SIDE */}
+    <div className="trusted-left">
+      <span className="support-tag">Supported by</span>
+    </div>
 
-      <div className="logo-item item1">
-        <img src="/logos/Raeng.png" alt="RAENG" />
-      </div>
+    {/* RIGHT SIDE */}
+    <div className="trusted-right">
 
-      <div className="logo-item item2">
-        <img src="/logos/Jasiri.png" alt="Jasiri" />
-      </div>
+      <div className="logo-cloud">
 
-      <div className="logo-item item3">
-        <img src="/logos/54Collective.png" alt="54 Collective" />
-      </div>
+        <div className="logo-item item1">
+          <img src="/logos/Raeng.png" alt="RAENG" />
+        </div>
 
-      <div className="logo-item item4">
-        <img src="/logos/UON.png" alt="University of Nairobi" />
-      </div>
+        <div className="logo-item item2">
+          <img src="/logos/Jasiri.png" alt="Jasiri" />
+        </div>
 
-      <div className="logo-item item5">
-        <img src="/logos/Multichoice.png" alt="Multichoice" />
-      </div>
+        <div className="logo-item item3">
+          <img src="/logos/54Collective.png" alt="54 Collective" />
+        </div>
 
-      <div className="logo-item item6">
-        <img src="/logos/Benz.png" alt="Mercedes Benz Fellowship" />
+        <div className="logo-item item4">
+          <img src="/logos/UON.png" alt="University of Nairobi" />
+        </div>
+
+        <div className="logo-item item5">
+          <img src="/logos/Multichoice.png" alt="Multichoice" />
+        </div>
+
+        <div className="logo-item item6">
+          <img src="/logos/Benz.png" alt="Mercedes Benz Fellowship" />
+        </div>
+
       </div>
 
     </div>
@@ -213,6 +223,7 @@ export default function Home() {
   </div>
 
 </section>
+                
         {/* WHY CHOOSE US */}
         <section className="why-section">
           <div className="section-heading">
