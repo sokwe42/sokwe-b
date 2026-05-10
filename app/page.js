@@ -1,7 +1,29 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
+
 import Navbar from "@/components/Navbar.js";
+import Footer from "@/components/Footer.js";
+
 import "./home.css";
 
+/* =========================
+   LOGOS
+========================= */
+const logos = [
+  { src: "/logos/Raeng.png", alt: "RAENG" },
+  { src: "/logos/Jasiri.png", alt: "Jasiri" },
+  { src: "/logos/54Collective.png", alt: "54 Collective" },
+  { src: "/logos/UON.png", alt: "University of Nairobi" },
+  { src: "/logos/Multichoice.png", alt: "Multichoice" },
+  { src: "/logos/Benz.png", alt: "Mercedes Benz Fellowship" },
+  { src: "/logos/edens.png", alt: "Edens" },
+];
+
+/* =========================
+   COURSE CATEGORIES
+========================= */
 const courseCategories = [
   {
     icon: "💻",
@@ -36,6 +58,28 @@ const courseCategories = [
 ];
 
 export default function Home() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  /* =========================
+     AUTO ROTATE LOGOS
+  ========================= */
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % logos.length);
+    }, 2200);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  /* =========================
+     SHOW 3 LOGOS AT A TIME
+  ========================= */
+  const visibleLogos = [
+    logos[currentIndex % logos.length],
+    logos[(currentIndex + 1) % logos.length],
+    logos[(currentIndex + 2) % logos.length],
+  ];
+
   return (
     <>
       <Navbar />
@@ -44,7 +88,9 @@ export default function Home() {
         {/* HERO */}
         <section className="hero-section">
           <div className="hero-content">
-            <span className="hero-badge">Your career journey starts here</span>
+            <span className="hero-badge">
+              Your career journey starts here
+            </span>
 
             <h1>
               Find the right course. <br />
@@ -58,60 +104,69 @@ export default function Home() {
             </p>
 
             <form className="hero-search" action="/explore-courses">
-  <input
-    type="text"
-    name="search"
-    placeholder="What do you want to learn?"
-  />
-  <button type="submit">Search Courses</button>
-</form>
+              <input
+                type="text"
+                name="search"
+                placeholder="What do you want to learn?"
+              />
+
+              <button type="submit">Search Courses</button>
+            </form>
 
             <div className="hero-buttons">
               <Link href="/explore-courses" className="primary-btn">
                 Explore Courses
               </Link>
+
               <Link href="/career-guidance" className="secondary-btn">
                 Get Career Guidance
               </Link>
             </div>
           </div>
 
+          {/* HERO VISUAL */}
           <div className="hero-visual-card">
-  <div className="mini-card active">
-    <span>📚</span>
-    <div>
-      <h4>Certified Courses</h4>
-      <p>Learn practical skills for real careers.</p>
-    </div>
-  </div>
+            <div className="mini-card active">
+              <span>📚</span>
 
-  <div className="mini-card">
-    <span>🎯</span>
-    <div>
-      <h4>Career Matching</h4>
-      <p>Discover paths that fit your strengths.</p>
-    </div>
-  </div>
+              <div>
+                <h4>Certified Courses</h4>
+                <p>Learn practical skills for real careers.</p>
+              </div>
+            </div>
 
-  <div className="mini-card">
-    <span>🤖</span>
-    <div>
-      <h4>AI Coaching</h4>
-      <p>Get guided support while learning.</p>
-    </div>
-  </div>
-</div>
+            <div className="mini-card">
+              <span>🎯</span>
+
+              <div>
+                <h4>Career Matching</h4>
+                <p>Discover paths that fit your strengths.</p>
+              </div>
+            </div>
+
+            <div className="mini-card">
+              <span>🤖</span>
+
+              <div>
+                <h4>AI Coaching</h4>
+                <p>Get guided support while learning.</p>
+              </div>
+            </div>
+          </div>
         </section>
 
-        {/* POPULAR CAREER PATHS / COURSE CATEGORIES */}
+        {/* CAREER PATHS */}
         <section className="career-paths-section">
           <div className="career-paths-text">
             <span>Popular career paths</span>
+
             <h2>Explore skills that can shape your future</h2>
+
             <p>
               Browse practical course categories built around real career goals.
               Start with what interests you, then grow step by step.
             </p>
+
             <Link href="/explore-courses" className="category-btn">
               View All Courses
             </Link>
@@ -121,8 +176,11 @@ export default function Home() {
             {courseCategories.map((category) => (
               <div className="course-category-card" key={category.title}>
                 <span>{category.icon}</span>
+
                 <h3>{category.title}</h3>
+
                 <p>{category.text}</p>
+
                 <Link href="/explore-courses" className="category-btn">
                   Explore Courses
                 </Link>
@@ -154,56 +212,57 @@ export default function Home() {
           </div>
         </section>
 
-        {/* TRUSTED CLIENTS */}
-<section className="trusted-section">
+        {/* TRUSTED SECTION */}
+        <section className="trusted-section">
+          <div className="trusted-top">
+            <h2 className="trusted-title">
+              Trusted learning ecosystem
+            </h2>
 
-  {/* TOP CONTENT (FULL WIDTH) */}
-  <div className="trusted-top">
+            <h3 className="trusted-subtitle">
+              Trusted by learners, teams, and growing businesses
+            </h3>
 
-    <h2 className="trusted-title">
-      Trusted learning ecosystem
-    </h2>
+            <p className="trusted-text">
+              Sokwe-b connects learners with practical skills aligned with the
+              tools, platforms, and companies shaping the modern workplace.
+              Through collaborations with innovation hubs, academic institutions,
+              leadership fellowships, and digital ecosystems, Sokwe-b continues
+              building opportunities that empower future-ready learners across
+              technology, business, and creative industries.
+            </p>
+          </div>
 
-    <h3 className="trusted-subtitle">
-      Trusted by learners, teams, and growing businesses
-    </h3>
+          <div className="trusted-bottom">
+            <div className="trusted-line">
+              <span className="support-tag">
+                Supported by
+              </span>
 
-    <p className="trusted-text">
-      Sokwe-b connects learners with practical skills aligned with the
-      tools, platforms, and companies shaping the modern workplace.
-      Through collaborations with innovation hubs, academic institutions,
-      leadership fellowships, and digital ecosystems, Sokwe-b continues
-      building opportunities that empower future-ready learners across
-      technology, business, and creative industries.
-    </p>
+              {/* LOGO CAROUSEL */}
+              <div className="logo-carousel">
+                {visibleLogos.map((logo, index) => (
+                  <div
+                    className="logo-card"
+                    key={`${logo.alt}-${index}`}
+                  >
+                    <img src={logo.src} alt={logo.alt} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
-  </div>
-
-<div className="trusted-bottom">
-
-  <p className="trusted-line">
-    <span className="support-tag">Supported by</span>
-
-    <span className="logo-row">
-      <img src="/logos/Raeng.png" alt="RAENG" />
-      <img src="/logos/Jasiri.png" alt="Jasiri" />
-      <img src="/logos/54Collective.png" alt="54 Collective" />
-      <img src="/logos/UON.png" alt="University of Nairobi" />
-      <img src="/logos/Multichoice.png" alt="Multichoice" />
-      <img src="/logos/Benz.png" alt="Mercedes Benz Fellowship" />
-    </span>
-
-  </p>
-
-</div>
-
-</section>
-                
-        {/* WHY CHOOSE US */}
+        {/* WHY SECTION */}
         <section className="why-section">
           <div className="section-heading">
             <span>Why Sokwe-b?</span>
-            <h2>Built for learners who need direction, not confusion</h2>
+
+            <h2>
+              Built for learners who need direction, not confusion
+            </h2>
+
             <p>
               We combine course discovery, career guidance, and AI coaching to
               help learners make smarter education and career choices.
@@ -213,24 +272,31 @@ export default function Home() {
           <div className="why-grid">
             <div className="why-card">
               <span>🧭</span>
+
               <h3>Career-first learning</h3>
+
               <p>
-                Courses are organized around career paths, with both formal and informal carrer options available 
+                Courses are organized around career paths, with both formal and
+                informal career options available.
               </p>
             </div>
 
             <div className="why-card">
               <span>⚡</span>
+
               <h3>Practical skill focus</h3>
+
               <p>
                 Learners can explore real-world skills useful for jobs,
-                freelancing, business & personal growth.
+                freelancing, business, and personal growth.
               </p>
             </div>
 
             <div className="why-card">
               <span>🤝</span>
+
               <h3>Guidance and support</h3>
+
               <p>
                 Career guidance and AI coaching help learners avoid feeling lost
                 when choosing their path.
@@ -239,8 +305,8 @@ export default function Home() {
           </div>
         </section>
       </main>
+
       <Footer />
     </>
   );
 }
-import Footer from "@/components/Footer.js";
