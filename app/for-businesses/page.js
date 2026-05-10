@@ -130,6 +130,8 @@ export default function ForBusinesses() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
+import Footer from "@/components/Footer.js";

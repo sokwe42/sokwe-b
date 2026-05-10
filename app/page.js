@@ -189,7 +189,7 @@ export default function Home() {
         {/* WHY CHOOSE US */}
         <section className="why-section">
           <div className="section-heading">
-            <span>Why Sokwe-b</span>
+            <span>Why Sokwe-b?</span>
             <h2>Built for learners who need direction, not confusion</h2>
             <p>
               We combine course discovery, career guidance, and AI coaching to
@@ -227,6 +227,8 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
+import Footer from "@/components/Footer.js";

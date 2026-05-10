@@ -250,6 +250,8 @@ export default function ExploreCourses() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
+import Footer from "@/components/Footer.js";

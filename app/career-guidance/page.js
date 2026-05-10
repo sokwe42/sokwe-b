@@ -153,6 +153,8 @@ export default function CareerGuidance() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
+import Footer from "@/components/Footer.js";

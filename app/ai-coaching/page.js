@@ -147,6 +147,8 @@ export default function AICoaching() {
           </a>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
+import Footer from "@/components/Footer.js";
