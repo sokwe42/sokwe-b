@@ -35,17 +35,6 @@ const courseCategories = [
   },
 ];
 
-const partnerCompanies = [
-  "Google",
-  "Microsoft",
-  "Meta",
-  "IBM",
-  "Cisco",
-  "AWS",
-  "HubSpot",
-  "Coursera",
-];
-
 export default function Home() {
   return (
     <>
@@ -165,27 +154,65 @@ export default function Home() {
           </div>
         </section>
 
-        {/* TRUSTED CLIENTS */}
-        <section className="trusted-section">
-          <span>Trusted learning ecosystem</span>
-          <h2>Trusted by learners, teams, and growing businesses</h2>
-          <p>
-            Sokwe-b connects learners with practical skills aligned with the
-            tools, platforms, and companies shaping the modern workplace.
-          </p>
-        </section>
+{/* TRUSTED CLIENTS + SUPPORTERS WRAPPER */}
+<section className="trusted-wrapper">
 
-        {/* COMPANY CAROUSEL */}
-        <section className="company-carousel-section">
-          <div className="company-carousel">
-            {partnerCompanies.map((company) => (
-              <div className="company-card" key={company}>
-                {company}
-              </div>
-            ))}
-          </div>
-        </section>
+  {/* LEFT SIDE - TEXT */}
+  <div className="trusted-left">
 
+    <div className="trusted-section">
+      <span>Trusted learning ecosystem</span>
+
+      <h2>
+        Trusted by learners, teams, and growing businesses
+      </h2>
+
+      <p>
+        Sokwe-b connects learners with practical skills aligned with the
+        tools, platforms, and companies shaping the modern workplace.
+        Through collaborations with innovation hubs, academic institutions,
+        leadership fellowships, and digital ecosystems, Sokwe-b continues
+        building opportunities that empower future-ready learners across
+        technology, business, and creative industries.
+      </p>
+    </div>
+
+  </div>
+
+  {/* RIGHT SIDE - LOGOS */}
+  <div className="trusted-right">
+
+    <div className="logo-cloud">
+
+      <div className="logo-item item1">
+        <img src="/logos/Raeng.png" alt="RAENG" />
+      </div>
+
+      <div className="logo-item item2">
+        <img src="/logos/Jasiri.png" alt="Jasiri" />
+      </div>
+
+      <div className="logo-item item3">
+        <img src="/logos/54Collective.png" alt="54 Collective" />
+      </div>
+
+      <div className="logo-item item4">
+        <img src="/logos/UON.png" alt="University of Nairobi" />
+      </div>
+
+      <div className="logo-item item5">
+        <img src="/logos/Multichoice.png" alt="Multichoice" />
+      </div>
+
+      <div className="logo-item item6">
+        <img src="/logos/Benz.png" alt="Mercedes Benz Fellowship" />
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
         {/* WHY CHOOSE US */}
         <section className="why-section">
           <div className="section-heading">
@@ -202,8 +229,7 @@ export default function Home() {
               <span>🧭</span>
               <h3>Career-first learning</h3>
               <p>
-                Courses are organized around career paths, making it easier to
-                know what to learn and why.
+                Courses are organized around career paths, with both formal and informal carrer options available 
               </p>
             </div>
 
@@ -212,7 +238,7 @@ export default function Home() {
               <h3>Practical skill focus</h3>
               <p>
                 Learners can explore real-world skills useful for jobs,
-                freelancing, business, and personal growth.
+                freelancing, business & personal growth.
               </p>
             </div>
 
