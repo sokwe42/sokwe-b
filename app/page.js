@@ -31,6 +31,11 @@ const courseCategories = [
     text: "Web development, coding, systems, and digital tools.",
   },
   {
+    icon: "📈",
+    title: "Business Skills",
+    text: "Entrepreneurship, marketing, sales, and leadership.",
+  },
+  {
     icon: "📊",
     title: "Data & Analytics",
     text: "Excel, SQL, data science, and business intelligence.",
@@ -49,11 +54,6 @@ const courseCategories = [
     icon: "💼",
     title: "Career Readiness",
     text: "CV building, interviews, workplace skills, and growth.",
-  },
-  {
-    icon: "📈",
-    title: "Business Skills",
-    text: "Entrepreneurship, marketing, sales, and leadership.",
   },
 ];
 
@@ -158,7 +158,7 @@ export default function Home() {
         {/* CAREER PATHS */}
         <section className="career-paths-section">
           <div className="career-paths-text">
-            <span>Popular career paths</span>
+            <span>START LEARNING TODAY</span>
 
             <h2>Explore skills that can shape your future</h2>
 
@@ -192,12 +192,12 @@ export default function Home() {
         {/* STATS */}
         <section className="stats-section">
           <div>
-            <h2>2,000+</h2>
+            <h2>" 2,000+ "</h2>
             <p>Learners guided</p>
           </div>
 
           <div>
-            <h2>100+</h2>
+            <h2>" 500+ "</h2>
             <p>Courses available</p>
           </div>
 
