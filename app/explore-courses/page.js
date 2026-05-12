@@ -1,9 +1,10 @@
 "use client";
 
+import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar.js";
+import Footer from "@/components/Footer.js";
 import { courses } from "@/app/data/courses.js";
 import "./explore.css";
 
@@ -30,7 +31,7 @@ const categories = [
   "Lifestyle",
 ];
 
-export default function ExploreCourses() {
+function ExploreCoursesContent() {
   const searchParams = useSearchParams();
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -250,8 +251,16 @@ export default function ExploreCourses() {
           </div>
         </section>
       </main>
+
       <Footer />
     </>
   );
 }
-import Footer from "@/components/Footer.js";
+
+export default function ExploreCourses() {
+  return (
+    <Suspense fallback={<div>Loading courses...</div>}>
+      <ExploreCoursesContent />
+    </Suspense>
+  );
+}
