@@ -1,6 +1,6 @@
 .career-page {
-  background: #f4f7fc;
-  color: #0f172a;
+  background: var(--bg);
+  color: var(--text);
   overflow-x: hidden;
 }
 
@@ -15,7 +15,7 @@
   background:
     radial-gradient(circle at 12% 20%, rgb(15, 1, 66), transparent 28%),
     radial-gradient(circle at 80% 18%, rgb(6, 44, 97), transparent 22%),
-    linear-gradient(135deg, #001133 0%, #001133 100%);
+    linear-gradient(135deg, var(--navy) 0%, var(--navy) 100%);
   color: white;
 }
 
@@ -28,7 +28,7 @@
 .career-paths-left span,
 .career-cta span {
   display: inline-block;
-  color: #58d2d4;
+  color: var(--accent-light);
   font-weight: 900;
   text-transform: uppercase;
   font-size: 0.82rem;
@@ -63,7 +63,7 @@
   border-radius: 999px;
   font-weight: 900;
   background: white;
-  color: #123a8f;
+  color: var(--primary);
 }
 
 .outline-btn {
@@ -100,16 +100,16 @@
 
 .journey-item.active {
   background: white;
-  color: #0f172a;
+  color: var(--text);
 }
 
 .journey-item span {
   font-weight: 900;
-  color: #58d2d4;
+  color: var(--accent-light);
 }
 
 .journey-item.active span {
-  color: #123a8f;
+  color: var(--primary);
 }
 
 .journey-item p {
@@ -127,14 +127,20 @@
   text-align: center;
 }
 
+.section-heading span,
+.career-paths-left span,
+.career-cta span {
+  color: var(--primary-mid);
+}
+
 .section-heading h2 {
   font-size: clamp(2rem, 4vw, 3.2rem);
-  color: #123a8f;
+  color: var(--primary);
   margin-bottom: 12px;
 }
 
 .section-heading p {
-  color: #6b7a99;
+  color: var(--text-muted);
   line-height: 1.7;
 }
 
@@ -148,7 +154,7 @@
 
 .guidance-card {
   background: white;
-  border: 1px solid #d7e0ee;
+  border: 1px solid var(--border);
   border-radius: 26px;
   padding: 28px;
   box-shadow: 0 16px 35px rgba(18, 58, 143, 0.07);
@@ -159,12 +165,12 @@
 }
 
 .guidance-card h3 {
-  color: #123a8f;
+  color: var(--primary);
   margin: 16px 0 10px;
 }
 
 .guidance-card p {
-  color: #6b7a99;
+  color: var(--text-muted);
   line-height: 1.7;
 }
 
@@ -182,21 +188,15 @@
   max-width: 380px;
 }
 
-.career-paths-left span,
-.section-heading span,
-.career-cta span {
-  color: #1e56c5;
-}
-
 .career-paths-left h2 {
-  color: #123a8f;
+  color: var(--primary);
   font-size: clamp(1.8rem, 3vw, 2.8rem);
   line-height: 1.08;
   margin-bottom: 14px;
 }
 
 .career-paths-left p {
-  color: #6b7a99;
+  color: var(--text-muted);
   line-height: 1.75;
 }
 
@@ -207,11 +207,11 @@
 }
 
 .career-path-card {
-  background: #f4f7fc;
-  border: 1px solid #d7e0ee;
+  background: var(--bg);
+  border: 1px solid var(--border);
   border-radius: 22px;
   padding: 24px;
-  color: #123a8f;
+  color: var(--primary);
   font-weight: 900;
   box-shadow: 0 12px 30px rgba(18, 58, 143, 0.06);
   transition: 0.25s ease;
@@ -219,7 +219,7 @@
 
 .career-path-card:hover {
   transform: translateY(-5px);
-  border-color: #2cc7c9;
+  border-color: var(--accent);
 }
 
 /* CTA */
@@ -228,23 +228,23 @@
   text-align: center;
   background:
     radial-gradient(circle at top right, rgba(44, 199, 201, 0.16), transparent 34%),
-    #f4f7fc;
+    var(--bg);
 }
 
 .career-cta h2 {
   max-width: 760px;
   margin: 12px auto;
-  color: #123a8f;
+  color: var(--primary);
   font-size: clamp(2rem, 4vw, 3.2rem);
 }
 
 .career-cta p {
-  color: #6b7a99;
+  color: var(--text-muted);
   margin-bottom: 26px;
 }
 
 .career-cta button {
-  background: #123a8f;
+  background: var(--primary);
   color: white;
 }
 
@@ -253,6 +253,7 @@
   .career-hero,
   .career-paths {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
   .guidance-grid,
@@ -286,7 +287,7 @@
 }
 
 .form-container span {
-  color: #1e56c5;
+  color: var(--primary-mid);
   font-weight: 900;
   text-transform: uppercase;
   font-size: 0.82rem;
@@ -294,13 +295,13 @@
 }
 
 .form-container h2 {
-  color: #123a8f;
+  color: var(--primary);
   font-size: clamp(2rem, 4vw, 3rem);
   margin: 12px 0;
 }
 
 .form-container p {
-  color: #6b7a99;
+  color: var(--text-muted);
   margin-bottom: 30px;
 }
 
@@ -320,8 +321,8 @@
   width: 100%;
   padding: 14px 16px;
   border-radius: 14px;
-  border: 1px solid #d7e0ee;
-  background: #f4f7fc;
+  border: 1px solid var(--border);
+  background: var(--bg);
   outline: none;
   font-size: 0.95rem;
 }
@@ -334,14 +335,14 @@
   margin-top: 10px;
   padding: 14px;
   border-radius: 999px;
-  background: #123a8f;
+  background: var(--primary);
   color: white;
   font-weight: 800;
   transition: 0.25s ease;
 }
 
 .career-form button:hover {
-  background: #0f2f75;
+  background: var(--primary-dark);
 }
 
 /* MOBILE */

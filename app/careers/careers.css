@@ -1,6 +1,6 @@
 .jobs-page {
-  background: #f4f7fc;
-  color: #0f172a;
+  background: var(--bg);
+  color: var(--text);
   overflow-x: hidden;
 }
 
@@ -14,7 +14,7 @@
   background:
     radial-gradient(circle at 12% 20%, rgb(15, 1, 66), transparent 28%),
     radial-gradient(circle at 80% 18%, rgb(6, 44, 97), transparent 22%),
-    linear-gradient(135deg, #001133 0%, #001133 100%);
+    linear-gradient(135deg, var(--navy) 0%, var(--navy) 100%);
   color: white;
 }
 
@@ -27,7 +27,7 @@
 .culture-left span,
 .form-container span {
   display: inline-block;
-  color: #58d2d4;
+  color: var(--accent-light);
   font-weight: 900;
   text-transform: uppercase;
   font-size: 0.82rem;
@@ -61,7 +61,7 @@
   border-radius: 999px;
   font-weight: 900;
   background: white;
-  color: #123a8f;
+  color: var(--primary);
 }
 
 .outline-btn {
@@ -94,7 +94,7 @@
 
 .job-check.active {
   background: white;
-  color: #123a8f;
+  color: var(--primary);
 }
 
 .roles-section {
@@ -110,13 +110,13 @@
 .section-heading span,
 .culture-left span,
 .form-container span {
-  color: #1e56c5;
+  color: var(--primary-mid);
 }
 
 .section-heading h2,
 .culture-left h2,
 .form-container h2 {
-  color: #123a8f;
+  color: var(--primary);
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.12;
   margin-bottom: 12px;
@@ -125,7 +125,7 @@
 .section-heading p,
 .culture-left p,
 .form-container p {
-  color: #6b7a99;
+  color: var(--text-muted);
   line-height: 1.75;
 }
 
@@ -139,25 +139,25 @@
 
 .role-card {
   background: white;
-  border: 1px solid #d7e0ee;
+  border: 1px solid var(--border);
   border-radius: 26px;
   padding: 28px;
   box-shadow: 0 16px 35px rgba(18, 58, 143, 0.07);
 }
 
 .role-card span {
-  color: #1e56c5;
+  color: var(--primary-mid);
   font-weight: 900;
   font-size: 0.82rem;
 }
 
 .role-card h3 {
-  color: #123a8f;
+  color: var(--primary);
   margin: 14px 0 10px;
 }
 
 .role-card p {
-  color: #6b7a99;
+  color: var(--text-muted);
   line-height: 1.7;
   margin-bottom: 20px;
 }
@@ -165,7 +165,7 @@
 .role-card button {
   padding: 12px 18px;
   border-radius: 999px;
-  background: #123a8f;
+  background: var(--primary);
   color: white;
   font-weight: 900;
 }
@@ -190,11 +190,11 @@
 }
 
 .culture-grid div {
-  background: #f4f7fc;
-  border: 1px solid #d7e0ee;
+  background: var(--bg);
+  border: 1px solid var(--border);
   border-radius: 24px;
   padding: 24px;
-  color: #123a8f;
+  color: var(--primary);
   font-weight: 900;
 }
 
@@ -226,8 +226,8 @@
   width: 100%;
   padding: 14px 16px;
   border-radius: 14px;
-  border: 1px solid #d7e0ee;
-  background: #f4f7fc;
+  border: 1px solid var(--border);
+  background: var(--bg);
   outline: none;
 }
 
@@ -238,7 +238,7 @@
 .application-form button {
   padding: 14px;
   border-radius: 999px;
-  background: #123a8f;
+  background: var(--primary);
   color: white;
   font-weight: 900;
 }
@@ -247,6 +247,7 @@
   .jobs-hero,
   .culture-section {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
   .roles-grid,

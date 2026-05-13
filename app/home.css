@@ -1,6 +1,6 @@
 .home-page {
-  background: #f4f7fc;
-  color: #0f172a;
+  background: var(--bg);
+  color: var(--text);
   overflow-x: hidden;
 }
 
@@ -90,7 +90,7 @@
   padding: 0 18px;
 
   font-size: 1rem;
-  color: #0f172a;
+  color: var(--text);
 }
 
 .hero-search button {
@@ -98,7 +98,7 @@
 
   border-radius: 999px;
 
-  background: #123a8f;
+  background: var(--primary);
   color: white;
 
   font-weight: 800;
@@ -135,7 +135,7 @@
 
 .primary-btn {
   background: white;
-  color: #123a8f;
+  color: var(--primary);
 }
 
 .secondary-btn {
@@ -146,7 +146,7 @@
 }
 
 .category-btn {
-  background: #123a8f;
+  background: var(--primary);
   color: white;
 }
 
@@ -197,7 +197,7 @@
 
 .mini-card.active {
   background: rgba(255,255,255,0.95);
-  color: #0f172a;
+  color: var(--text);
 }
 
 .mini-card span {
@@ -229,7 +229,7 @@
 
   background:
     radial-gradient(circle at left, rgba(44,199,201,0.12), transparent 35%),
-    #f4f7fc;
+    var(--bg);
 }
 
 .career-paths-text {
@@ -239,7 +239,7 @@
 .career-paths-text span,
 .section-heading span,
 .trusted-section span {
-  color: #1e56c5;
+  color: var(--primary-mid);
 
   font-weight: 900;
 
@@ -253,7 +253,7 @@
 .career-paths-text h2,
 .section-heading h2,
 .trusted-title {
-  color: #123a8f;
+  color: var(--primary);
   line-height: 1.12;
 }
 
@@ -266,7 +266,7 @@
 .career-paths-text p,
 .section-heading p,
 .trusted-text {
-  color: #6b7a99;
+  color: var(--text-muted);
   line-height: 1.75;
 }
 
@@ -299,7 +299,7 @@
 
   background: white;
 
-  border: 1px solid #d7e0ee;
+  border: 1px solid var(--border);
 
   border-radius: 26px;
 
@@ -312,7 +312,7 @@
 
 .course-category-card:hover {
   transform: translateY(-6px);
-  border-color: #2cc7c9;
+  border-color: var(--accent);
 }
 
 .course-category-card span {
@@ -320,12 +320,12 @@
 }
 
 .course-category-card h3 {
-  color: #123a8f;
+  color: var(--primary);
   margin: 16px 0 10px;
 }
 
 .course-category-card p {
-  color: #6b7a99;
+  color: var(--text-muted);
 
   line-height: 1.6;
 
@@ -345,7 +345,7 @@
 
   background: white;
 
-  border: 1px solid #d7e0ee;
+  border: 1px solid var(--border);
 
   border-radius: 26px;
 
@@ -364,12 +364,12 @@
 }
 
 .stats-section h2 {
-  color: #1e56c5;
+  color: var(--primary-mid);
   font-size: 2rem;
 }
 
 .stats-section p {
-  color: #6b7a99;
+  color: var(--text-muted);
   font-weight: 700;
 }
 
@@ -379,7 +379,7 @@
 
 .trusted-section {
   padding: 90px 28px;
-  background: #f4f7fc;
+  background: var(--bg);
 }
 
 .trusted-top {
@@ -440,7 +440,7 @@
 
   text-transform: uppercase;
 
-  color: #1e56c5;
+  color: var(--primary-mid);
 }
 
 /* =========================================
@@ -543,9 +543,9 @@
 }
 
 .why-card {
-  background: #f4f7fc;
+  background: var(--bg);
 
-  border: 1px solid #d7e0ee;
+  border: 1px solid var(--border);
 
   border-radius: 26px;
 
@@ -558,11 +558,11 @@
 
 .why-card h3 {
   margin: 16px 0 10px;
-  color: #123a8f;
+  color: var(--primary);
 }
 
 .why-card p {
-  color: #6b7a99;
+  color: var(--text-muted);
   line-height: 1.7;
 }
 
@@ -575,6 +575,7 @@
   .hero-section,
   .career-paths-section {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
   .career-paths-text {
@@ -617,7 +618,24 @@
 @media (max-width: 620px) {
 
   .hero-section {
-    padding: 70px 20px;
+    padding: 55px 20px 50px;
+  }
+
+  .career-paths-section {
+    padding: 55px 20px;
+  }
+
+  .why-section {
+    padding: 60px 20px;
+  }
+
+  .trusted-section {
+    padding: 60px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    letter-spacing: -1px;
   }
 
   .hero-search {

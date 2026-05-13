@@ -1,6 +1,6 @@
 .ai-page {
-  background: #f4f7fc;
-  color: #0f172a;
+  background: var(--bg);
+  color: var(--text);
   overflow-x: hidden;
 }
 
@@ -15,7 +15,7 @@
   background:
     radial-gradient(circle at 12% 20%, rgb(15, 1, 66), transparent 28%),
     radial-gradient(circle at 80% 18%, rgb(6, 44, 97), transparent 22%),
-    linear-gradient(135deg, #001133 0%, #001133 100%);
+    linear-gradient(135deg, var(--navy) 0%, var(--navy) 100%);
   color: white;
 }
 
@@ -29,7 +29,7 @@
 .book-section span,
 .featured-card > span {
   display: inline-block;
-  color: #58d2d4;
+  color: var(--accent-light);
   font-weight: 900;
   text-transform: uppercase;
   font-size: 0.82rem;
@@ -68,7 +68,7 @@
   border-radius: 999px;
   font-weight: 900;
   background: white;
-  color: #123a8f;
+  color: var(--primary);
 }
 
 .outline-btn {
@@ -103,7 +103,7 @@
 
 .ai-check.active {
   background: white;
-  color: #123a8f;
+  color: var(--primary);
 }
 
 /* COACHING AREAS */
@@ -121,14 +121,14 @@
 .process-left span,
 .book-section span,
 .featured-card > span {
-  color: #1e56c5;
+  color: var(--primary-mid);
 }
 
 .section-heading h2,
 .process-left h2,
 .book-section h2,
 .featured-card h2 {
-  color: #123a8f;
+  color: var(--primary);
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.12;
   margin-bottom: 12px;
@@ -138,7 +138,7 @@
 .process-left p,
 .book-section p,
 .featured-card p {
-  color: #6b7a99;
+  color: var(--text-muted);
   line-height: 1.75;
 }
 
@@ -152,7 +152,7 @@
 
 .coaching-card {
   background: white;
-  border: 1px solid #d7e0ee;
+  border: 1px solid var(--border);
   border-radius: 26px;
   padding: 28px;
   box-shadow: 0 16px 35px rgba(18, 58, 143, 0.07);
@@ -163,12 +163,12 @@
 }
 
 .coaching-card h3 {
-  color: #123a8f;
+  color: var(--primary);
   margin: 16px 0 10px;
 }
 
 .coaching-card p {
-  color: #6b7a99;
+  color: var(--text-muted);
   line-height: 1.7;
 }
 
@@ -193,8 +193,8 @@
 }
 
 .process-item {
-  background: #f4f7fc;
-  border: 1px solid #d7e0ee;
+  background: var(--bg);
+  border: 1px solid var(--border);
   border-radius: 24px;
   padding: 24px;
   box-shadow: 0 12px 30px rgba(18, 58, 143, 0.06);
@@ -202,13 +202,13 @@
 
 .process-item span {
   display: inline-block;
-  color: #1e56c5;
+  color: var(--primary-mid);
   font-weight: 900;
   margin-bottom: 12px;
 }
 
 .process-item p {
-  color: #123a8f;
+  color: var(--primary);
   font-weight: 900;
 }
 
@@ -226,7 +226,7 @@
 .featured-card,
 .featured-points {
   background: white;
-  border: 1px solid #d7e0ee;
+  border: 1px solid var(--border);
   border-radius: 30px;
   padding: 32px;
   box-shadow: 0 16px 35px rgba(18, 58, 143, 0.07);
@@ -240,8 +240,8 @@
 }
 
 .featured-tags span {
-  background: #f4f7fc;
-  color: #123a8f;
+  background: var(--bg);
+  color: var(--primary);
   font-weight: 800;
   padding: 9px 13px;
   border-radius: 999px;
@@ -250,7 +250,7 @@
 .featured-points {
   background:
     radial-gradient(circle at top right, rgba(44, 199, 201, 0.18), transparent 34%),
-    #001133;
+    var(--navy);
   color: white;
 }
 
@@ -286,7 +286,7 @@
 }
 
 .book-btn {
-  background: #123a8f;
+  background: var(--primary);
   color: white;
 }
 
@@ -296,6 +296,7 @@
   .ai-process,
   .ai-featured {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
   .coaching-grid,

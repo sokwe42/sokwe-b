@@ -3,6 +3,23 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Brand colors */
+  --primary: #123a8f;
+  --primary-dark: #0f2f75;
+  --primary-mid: #1e56c5;
+  --accent: #2cc7c9;
+  --accent-light: #58d2d4;
+  --navy: #001133;
+  --navy-dark: #07152f;
+
+  /* Text */
+  --text: #0f172a;
+  --text-muted: #6b7a99;
+
+  /* UI */
+  --border: #d7e0ee;
+  --bg: #f4f7fc;
 }
 
 @theme inline {
