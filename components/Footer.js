@@ -22,7 +22,7 @@ export default function Footer() {
               Sokwe-b Learning Platform <br />
               Nairobi, Kenya <br />
               info@sokweb.com <br />
-              +254 700 000 000
+              +254 708 801 801
             </p>
           </div>
         </div>
