@@ -257,20 +257,15 @@ export default function Home() {
         <section className="trusted-section">
           <div className="trusted-top">
             <h2 className="trusted-title">
-              Trusted learning ecosystem
+              Trusted by learners, teams, and growing businesses
             </h2>
 
-            <h3 className="trusted-subtitle">
-              Trusted by learners, teams, and growing businesses
-            </h3>
-
             <p className="trusted-text">
-              Sokwe-b connects learners with practical skills aligned with the
-              tools, platforms, and companies shaping the modern workplace.
-              Through collaborations with innovation hubs, academic institutions,
-              leadership fellowships, and digital ecosystems, Sokwe-b continues
-              building opportunities that empower future-ready learners across
-              technology, business, and creative industries.
+              Sokwe-b connects learners with practical, career-ready skills. We can help you
+              pursue a professional qualification, launch a cleaning business or even learn 
+              to repair domestic appliances. Through partnerships with innovation hubs,
+              academic institutions, and trade communities, Sokwe-b opens doors for
+              learners at every level, across formal programs and everyday trades alike 
             </p>
           </div>
 
