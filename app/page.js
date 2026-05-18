@@ -12,19 +12,19 @@ import "./home.css";
 ========================= */
 const heroCards = [
   {
-    icon: "🤖", iconBg: "#2563eb",
+    icon: "🏠", iconBg: "#2563eb",
     label: "Featured Courses", badge: "Coming Soon", badgeClass: "badge-green",
     title: "Property and Tenancy Management", duration: "90 min", meta: "KSh 89",
     time: "Self paced",
   },
   {
-    icon: "🎯", iconBg: "#7c3aed",
+    icon: "⚽", iconBg: "#7c3aed",
     label: "Featured Courses", badge: "Coming Soon", badgeClass: "badge-blue",
     title: "Sports Coaching and Sports Management", duration: "60 min", meta: "KSh 59",
     time: "Self paced",
   },
   {
-    icon: "💼", iconBg: "#059669",
+    icon: "🔧", iconBg: "#059669",
     label: "Featured Courses", badge: "Coming Soon", badgeClass: "badge-amber",
     title: "Domestic Appliance Repairing Course", duration: "2.7 hrs", meta: "KSh 2,500",
     time: "Self paced",
@@ -136,12 +136,12 @@ export default function Home() {
             </p>
 
             <div className="hero-buttons">
-              <Link href="/book-session" className="primary-btn">
-                Book a Session →
+              <Link href="/explore-courses" className="primary-btn">
+                Browse Courses
               </Link>
 
-              <Link href="/explore-courses" className="secondary-btn">
-                Browse Courses
+              <Link href="#contact" className="waitlist-btn">
+                or Join our Waiting list
               </Link>
             </div>
 
@@ -155,7 +155,7 @@ export default function Home() {
               <div className="hero-rating">
                 <span className="stars">★★★★★</span>
                 <span className="rating-score">4.9</span>
-                <span className="rating-count">from 1,200+ sessions</span>
+                <span className="rating-count">star rating from 1200+ students</span>
               </div>
             </div>
           </div>
@@ -180,13 +180,16 @@ export default function Home() {
             </div>
 
             <div className="hsc-time">
-              <span>📅</span>
               <span>{heroCards[heroIndex].time}</span>
             </div>
 
             <div className="hsc-progress">
               <div className="hsc-progress-bar" />
             </div>
+
+            <Link href="/explore-courses" className="hsc-explore-btn">
+              Explore Courses →
+            </Link>
           </div>
         </section>
       </div>

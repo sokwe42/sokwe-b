@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar.js";
+import CareerGuidanceForm from "@/components/CareerGuidanceForm.js";
 import "./career.css";
 
 const guidanceSteps = [
@@ -130,26 +131,7 @@ export default function CareerGuidance() {
               right career path and courses.
             </p>
 
-            <form className="career-form">
-              <div className="form-row">
-                <input type="text" placeholder="Your name" required />
-                <input type="email" placeholder="Your email" required />
-              </div>
-
-              <textarea
-                placeholder="What are your interests? (e.g. tech, business, design...)"
-                rows="4"
-                required
-              />
-
-              <textarea
-                placeholder="What are your goals? (e.g. job, freelancing, starting a business...)"
-                rows="4"
-                required
-              />
-
-              <button type="submit">Get Personalized Guidance</button>
-            </form>
+            <CareerGuidanceForm />
           </div>
         </section>
       </main>

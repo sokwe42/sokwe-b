@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar.js";
+import BusinessForm from "@/components/BusinessForm.js";
 import "./business.css";
 
 const businessServices = [
@@ -112,21 +113,7 @@ export default function ForBusinesses() {
               learning solution.
             </p>
 
-            <form className="business-form">
-              <div className="form-row">
-                <input type="text" placeholder="Company name" required />
-                <input type="email" placeholder="Work email" required />
-              </div>
-
-              <input type="text" placeholder="Training area of interest" />
-
-              <textarea
-                placeholder="Tell us about your team or training goals..."
-                rows="5"
-              />
-
-              <button type="submit">Submit Business Request</button>
-            </form>
+            <BusinessForm />
           </div>
         </section>
       </main>

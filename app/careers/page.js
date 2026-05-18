@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar.js";
+import JobApplicationForm from "@/components/JobApplicationForm.js";
 import "./careers.css";
 
 const roles = [
@@ -100,21 +101,7 @@ export default function Careers() {
               connect the form later.
             </p>
 
-            <form className="application-form">
-              <div className="form-row">
-                <input type="text" placeholder="Your name" required />
-                <input type="email" placeholder="Your email" required />
-              </div>
-
-              <input type="text" placeholder="Role you're interested in" />
-
-              <textarea
-                placeholder="Tell us about your skills or experience..."
-                rows="5"
-              />
-
-              <button type="submit">Submit Interest</button>
-            </form>
+            <JobApplicationForm />
           </div>
         </section>
       </main>
