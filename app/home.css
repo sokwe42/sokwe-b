@@ -497,8 +497,20 @@
   border-color: var(--accent);
 }
 
-.course-category-card span {
+.course-category-card > span:first-child {
   font-size: 2rem;
+}
+
+.category-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 3px 12px;
+  background: #d1faf4;
+  color: #0d7a5f;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .course-category-card h3 {

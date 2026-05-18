@@ -49,6 +49,24 @@ const logos = [
 ========================= */
 const courseCategories = [
   {
+    icon: "🧹",
+    badge: "Trades",
+    title: "Cleaning & Home Services",
+    text: "Domestic cleaning, laundry services, and household management.",
+  },
+  {
+    icon: "🔧",
+    badge: "Trades",
+    title: "Repairs & Trades",
+    text: "Appliance repairs, plumbing basics, electrical awareness, and handyman skills.",
+  },
+  {
+    icon: "🌱",
+    badge: "Trades",
+    title: "Garden & Agriculture",
+    text: "Landscaping, urban farming, crop growing, and garden maintenance.",
+  },
+  {
     icon: "💻",
     title: "IT & Software",
     text: "Web development, coding, systems, and digital tools.",
@@ -217,6 +235,9 @@ export default function Home() {
             {courseCategories.map((category) => (
               <div className="course-category-card" key={category.title}>
                 <span>{category.icon}</span>
+                {category.badge && (
+                  <span className="category-badge">{category.badge}</span>
+                )}
 
                 <h3>{category.title}</h3>
 
