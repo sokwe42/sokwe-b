@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [status, setStatus] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (e) =>
@@ -15,19 +15,24 @@ export default function ContactForm() {
     setStatus("loading");
     setErrorMsg("");
 
-    const res = await fetch("/api/mailing-list", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+    try {
+      const res = await fetch("/api/mailing-list", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (!res.ok) {
-      setErrorMsg(data.error || "Something went wrong.");
+      if (!res.ok) {
+        setErrorMsg(data.error || "Something went wrong. Please try again.");
+        setStatus("error");
+      } else {
+        setStatus("success");
+      }
+    } catch {
+      setErrorMsg("Network error — please check your connection and try again.");
       setStatus("error");
-    } else {
-      setStatus("success");
     }
   };
 

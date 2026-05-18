@@ -15,19 +15,24 @@ export default function BusinessForm() {
     setStatus("loading");
     setErrorMsg("");
 
-    const res = await fetch("/api/business-inquiry", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+    try {
+      const res = await fetch("/api/business-inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (!res.ok) {
-      setErrorMsg(data.error || "Something went wrong.");
+      if (!res.ok) {
+        setErrorMsg(data.error || "Something went wrong.");
+        setStatus("error");
+      } else {
+        setStatus("success");
+      }
+    } catch {
+      setErrorMsg("Network error — please check your connection and try again.");
       setStatus("error");
-    } else {
-      setStatus("success");
     }
   };
 
