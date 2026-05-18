@@ -296,47 +296,63 @@ export default function Home() {
             <span>Why Sokwe-b?</span>
 
             <h2>
-              Built for learners who need direction, not confusion
+              Built for every kind of learner — not just the formally qualified
             </h2>
 
             <p>
-              We combine course discovery, career guidance, and AI coaching to
-              help learners make smarter education and career choices.
+              Whether you&apos;re working toward a professional certificate or
+              building a trade from scratch, we combine course discovery, career
+              guidance, and AI coaching to help you move forward with confidence.
             </p>
           </div>
 
           <div className="why-grid">
             <div className="why-card">
-              <span>🧭</span>
+              <div className="why-icon-box" style={{ background: "rgba(37,99,235,0.18)" }}>
+                🛤️
+              </div>
 
-              <h3>Career-first learning</h3>
+              <h3>Formal and informal pathways</h3>
 
               <p>
-                Courses are organized around career paths, with both formal and
-                informal career options available.
+                Courses span accredited professional programmes and practical
+                trades — from accounting and healthcare to cleaning businesses
+                and domestic appliance repair.
               </p>
+
+              <span className="why-pill why-pill-outline">All learners</span>
             </div>
 
             <div className="why-card">
-              <span>⚡</span>
+              <div className="why-icon-box" style={{ background: "rgba(5,150,105,0.18)" }}>
+                🔧
+              </div>
 
-              <h3>Practical skill focus</h3>
+              <h3>Real-world, job-ready skills</h3>
 
               <p>
-                Learners can explore real-world skills useful for jobs,
-                freelancing, business, and personal growth.
+                Learn skills you can use immediately — for employment,
+                freelancing, starting a trade, or running your own small
+                business. No jargon, no fluff.
               </p>
+
+              <span className="why-pill why-pill-teal">Trades &amp; informal</span>
             </div>
 
             <div className="why-card">
-              <span>🤝</span>
+              <div className="why-icon-box" style={{ background: "rgba(251,146,60,0.18)" }}>
+                🧠
+              </div>
 
-              <h3>Guidance and support</h3>
+              <h3>Our career guidance</h3>
 
               <p>
-                Career guidance and AI coaching help learners avoid feeling lost
-                when choosing their path.
+                Not sure where to start? Our AI coach helps you identify the
+                right path — whether that&apos;s a carpet cleaning course or a
+                project management diploma.
               </p>
+
+              <span className="why-pill why-pill-outline">All learners</span>
             </div>
           </div>
         </section>
