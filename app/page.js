@@ -7,6 +7,29 @@ import Navbar from "@/components/Navbar.js";
 import Footer from "@/components/Footer.js";
 
 import "./home.css";
+/* =========================
+   HERO CARDS (right-side carousel)
+========================= */
+const heroCards = [
+  {
+    icon: "🤖", iconBg: "#2563eb",
+    label: "NEXT SESSION", badge: "Confirmed", badgeClass: "badge-green",
+    title: "AI Productivity Coaching", duration: "90 min", meta: "KSh 89",
+    time: "Today, 2:30 PM · Online via Zoom",
+  },
+  {
+    icon: "🎯", iconBg: "#7c3aed",
+    label: "UPCOMING", badge: "Available", badgeClass: "badge-blue",
+    title: "Career Guidance Session", duration: "60 min", meta: "KSh 59",
+    time: "Tomorrow, 10:00 AM · Online via Zoom",
+  },
+  {
+    icon: "💼", iconBg: "#059669",
+    label: "WORKSHOP", badge: "Open", badgeClass: "badge-amber",
+    title: "Business Training", duration: "3 hrs", meta: "KSh 149",
+    time: "Sat, 9:00 AM · Online via Zoom",
+  },
+];
 
 /* =========================
    LOGOS
@@ -59,6 +82,7 @@ const courseCategories = [
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [heroIndex, setHeroIndex] = useState(0);
 
   /* =========================
      AUTO ROTATE LOGOS
@@ -67,7 +91,16 @@ export default function Home() {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % logos.length);
     }, 2200);
+    return () => clearInterval(interval);
+  }, []);
 
+  /* =========================
+     AUTO ROTATE HERO CARD
+  ========================= */
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % heroCards.length);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -89,68 +122,71 @@ export default function Home() {
         <section className="hero-section">
           <div className="hero-content">
             <span className="hero-badge">
-              Your career journey starts here
+              AI Coaching · Career Guidance · Business Training
             </span>
 
             <h1>
-              Find the right course. <br />
-              Build the right future.
+              Invest in <span className="hero-highlight">Skills</span><br />
+              <span className="hero-highlight">That</span> Pay Back
             </h1>
 
             <p>
-              Sokwe-b Education helps learners discover career paths, explore
-              certified courses, and get AI-powered coaching for real-world
-              success.
+              Sokwe-b Education helps professionals across Africa master AI
+              tools, accelerate careers, and build businesses — through live
+              coaching, workshops, and on-demand courses.
             </p>
 
-            <form className="hero-search" action="/explore-courses">
-              <input
-                type="text"
-                name="search"
-                placeholder="What do you want to learn?"
-              />
-
-              <button type="submit">Search Courses</button>
-            </form>
-
             <div className="hero-buttons">
-              <Link href="/explore-courses" className="primary-btn">
-                Explore Courses
+              <Link href="/book-session" className="primary-btn">
+                Book a Session →
               </Link>
 
-              <Link href="/career-guidance" className="secondary-btn">
-                Get Career Guidance
+              <Link href="/explore-courses" className="secondary-btn">
+                Browse Courses
               </Link>
+            </div>
+
+            <div className="hero-social-proof">
+              <div className="hero-avatars">
+                <span className="avatar avatar-1">AW</span>
+                <span className="avatar avatar-2">BO</span>
+                <span className="avatar avatar-3">CM</span>
+                <span className="avatar avatar-4">DK</span>
+              </div>
+              <div className="hero-rating">
+                <span className="stars">★★★★★</span>
+                <span className="rating-score">4.9</span>
+                <span className="rating-count">from 1,200+ sessions</span>
+              </div>
             </div>
           </div>
 
           {/* HERO VISUAL */}
-          <div className="hero-visual-card">
-            <div className="mini-card active">
-              <span>📚</span>
+          <div className="hero-session-card">
+            <div className="hsc-header">
+              <span className="hsc-label">{heroCards[heroIndex].label}</span>
+              <span className={`hsc-badge ${heroCards[heroIndex].badgeClass}`}>
+                {heroCards[heroIndex].badge}
+              </span>
+            </div>
 
-              <div>
-                <h4>Certified Courses</h4>
-                <p>Learn practical skills for real careers.</p>
+            <div className="hsc-body">
+              <div className="hsc-icon" style={{ background: heroCards[heroIndex].iconBg }}>
+                {heroCards[heroIndex].icon}
+              </div>
+              <div className="hsc-info">
+                <h4>{heroCards[heroIndex].title}</h4>
+                <p>{heroCards[heroIndex].duration} · {heroCards[heroIndex].meta}</p>
               </div>
             </div>
 
-            <div className="mini-card">
-              <span>🎯</span>
-
-              <div>
-                <h4>Career Matching</h4>
-                <p>Discover paths that fit your strengths.</p>
-              </div>
+            <div className="hsc-time">
+              <span>📅</span>
+              <span>{heroCards[heroIndex].time}</span>
             </div>
 
-            <div className="mini-card">
-              <span>🤖</span>
-
-              <div>
-                <h4>AI Coaching</h4>
-                <p>Get guided support while learning.</p>
-              </div>
+            <div className="hsc-progress">
+              <div className="hsc-progress-bar" />
             </div>
           </div>
         </section>
