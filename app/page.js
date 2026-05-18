@@ -115,9 +115,10 @@ export default function Home() {
 
   return (
     <>
-      {/* HERO WRAPPER — navbar + hero share the same dark background */}
+      <Navbar />
+
+      {/* HERO WRAPPER — provides the dark background behind the hero */}
       <div className="hero-wrapper">
-        <Navbar />
         <section className="hero-section">
           <div className="hero-content">
             <span className="hero-badge">
