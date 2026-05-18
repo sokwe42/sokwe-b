@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase";
 
 export async function POST(req) {
   const { name, email, role, experience } = await req.json();
@@ -7,7 +7,7 @@ export async function POST(req) {
     return Response.json({ error: "Name and email are required." }, { status: 400 });
   }
 
-  const { error } = await supabase
+  const { error } = await getSupabase()
     .from("job_applications")
     .insert([{ name, email, role: role || null, experience: experience || null }]);
 

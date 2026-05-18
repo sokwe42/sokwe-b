@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase";
 
 export async function POST(req) {
   const { name, email, message } = await req.json();
@@ -7,7 +7,7 @@ export async function POST(req) {
     return Response.json({ error: "Name and email are required." }, { status: 400 });
   }
 
-  const { error } = await supabase
+  const { error } = await getSupabase()
     .from("mailing_list")
     .insert([{ name, email, message: message || null }]);
 
