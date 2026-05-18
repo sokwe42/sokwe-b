@@ -13,7 +13,7 @@ export async function POST(req) {
 
   if (error) {
     console.error("Mailing list insert error:", error);
-    return Response.json({ error: "Could not save. Please try again." }, { status: 500 });
+    return Response.json({ error: error.message || "Could not save. Please try again." }, { status: 500 });
   }
 
   return Response.json({ success: true });
