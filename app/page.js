@@ -13,21 +13,21 @@ import "./home.css";
 const heroCards = [
   {
     icon: "🤖", iconBg: "#2563eb",
-    label: "NEXT SESSION", badge: "Confirmed", badgeClass: "badge-green",
-    title: "AI Productivity Coaching", duration: "90 min", meta: "KSh 89",
-    time: "Today, 2:30 PM · Online via Zoom",
+    label: "Featured Courses", badge: "Coming Soon", badgeClass: "badge-green",
+    title: "Property and Tenancy Management", duration: "90 min", meta: "KSh 89",
+    time: "Self paced",
   },
   {
     icon: "🎯", iconBg: "#7c3aed",
-    label: "UPCOMING", badge: "Available", badgeClass: "badge-blue",
-    title: "Career Guidance Session", duration: "60 min", meta: "KSh 59",
-    time: "Tomorrow, 10:00 AM · Online via Zoom",
+    label: "Featured Courses", badge: "Coming Soon", badgeClass: "badge-blue",
+    title: "Sports Coaching and Sports Management", duration: "60 min", meta: "KSh 59",
+    time: "Self paced",
   },
   {
     icon: "💼", iconBg: "#059669",
-    label: "WORKSHOP", badge: "Open", badgeClass: "badge-amber",
-    title: "Business Training", duration: "3 hrs", meta: "KSh 149",
-    time: "Sat, 9:00 AM · Online via Zoom",
+    label: "Featured Courses", badge: "Coming Soon", badgeClass: "badge-amber",
+    title: "Domestic Appliance Repairing Course", duration: "2.7 hrs", meta: "KSh 2,500",
+    time: "Self paced",
   },
 ];
 
@@ -121,7 +121,7 @@ export default function Home() {
         <section className="hero-section">
           <div className="hero-content">
             <span className="hero-badge">
-              AI Coaching · Career Guidance · Business Training
+              Online Courses for the 21st Century
             </span>
 
             <h1>
@@ -130,9 +130,9 @@ export default function Home() {
             </h1>
 
             <p>
-              Sokwe-b Education helps professionals across Africa master AI
-              tools, accelerate careers, and build businesses — through live
-              coaching, workshops, and on-demand courses.
+              Sokwe-b Education offers training courses and certifications
+              that help young Africans launch their profesional journey
+              in both formal and informal career paths.
             </p>
 
             <div className="hero-buttons">
