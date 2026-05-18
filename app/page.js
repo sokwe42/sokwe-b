@@ -115,10 +115,9 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
-
-      <main className="home-page">
-        {/* HERO */}
+      {/* HERO WRAPPER — navbar + hero share the same dark background */}
+      <div className="hero-wrapper">
+        <Navbar />
         <section className="hero-section">
           <div className="hero-content">
             <span className="hero-badge">
@@ -190,7 +189,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+      </div>
 
+      <main className="home-page">
         {/* CAREER PATHS */}
         <section className="career-paths-section">
           <div className="career-paths-text">

@@ -8,6 +8,14 @@
    HERO SECTION
 ========================================= */
 
+.hero-wrapper {
+  background:
+    radial-gradient(ellipse 55% 70% at 82% 52%, rgba(37,99,235,0.38) 0%, rgba(37,99,235,0.12) 38%, transparent 60%),
+    radial-gradient(ellipse 30% 50% at 90% 50%, rgba(96,165,250,0.09) 0%, transparent 50%),
+    radial-gradient(ellipse at 12% 30%, rgba(37,99,235,0.07) 0%, transparent 40%),
+    #040d1a;
+}
+
 .hero-section {
   min-height: calc(100vh - 72px);
   padding: 95px 28px 90px;
@@ -16,12 +24,6 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 50px;
-
-  background:
-    radial-gradient(ellipse 55% 70% at 82% 52%, rgba(37,99,235,0.38) 0%, rgba(37,99,235,0.12) 38%, transparent 60%),
-    radial-gradient(ellipse 30% 50% at 90% 50%, rgba(96,165,250,0.09) 0%, transparent 50%),
-    radial-gradient(ellipse at 12% 30%, rgba(37,99,235,0.07) 0%, transparent 40%),
-    #07101f;
 }
 
 .hero-content {
