@@ -14,19 +14,19 @@ const heroCards = [
   {
     icon: "🏠", iconBg: "#2563eb",
     label: "Featured Courses", badge: "Coming Soon", badgeClass: "badge-green",
-    title: "Property and Tenancy Management", duration: "90 min", meta: "KSh 89",
+    title: "Property and Tenancy Management", duration: "3 hrs", meta: "KSh 2,500",
     time: "Self paced",
   },
   {
     icon: "⚽", iconBg: "#7c3aed",
     label: "Featured Courses", badge: "Coming Soon", badgeClass: "badge-blue",
-    title: "Sports Coaching and Sports Management", duration: "60 min", meta: "KSh 59",
+    title: "Sports Coaching and Sports Management", duration: "3 hrs", meta: "KSh 2,500",
     time: "Self paced",
   },
   {
     icon: "🔧", iconBg: "#059669",
     label: "Featured Courses", badge: "Coming Soon", badgeClass: "badge-amber",
-    title: "Domestic Appliance Repairing Course", duration: "2.7 hrs", meta: "KSh 2,500",
+    title: "Domestic Appliance Repairing Course", duration: "2 hrs 45 Min", meta: "KSh 2,500",
     time: "Self paced",
   },
 ];
