@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import Navbar from "@/components/Navbar.js";
@@ -37,6 +37,26 @@ function ExploreCoursesContent() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("All Courses");
   const [sortBy, setSortBy] = useState("Popular");
+  const catalogueRef = useRef(null);
+
+  const heroChips = [
+    { label: "🤖 AI & Tech",       category: "Technology" },
+    { label: "📈 Business",         category: "Business" },
+    { label: "🔧 Trades",           category: "Engineering" },
+    { label: "🎨 Design",           category: "Design" },
+    { label: "📊 Data",             category: "Accounting & Finance" },
+    { label: "💼 Career Readiness", category: "Education" },
+  ];
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    catalogueRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const handleChipClick = (category) => {
+    setActiveCategory(category);
+    catalogueRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   useEffect(() => {
     const querySearch = searchParams.get("search");
@@ -92,52 +112,142 @@ function ExploreCoursesContent() {
       <Navbar />
 
       <main className="explore-page">
-        <section className="flagship-landing">
-          <div className="flagship-left">
-            <span>Flagship Course</span>
-            <h1>AI Career Starter Program</h1>
-            <p>
-              Learn how to use AI tools, discover your career path, and build
-              practical digital skills for modern work.
-            </p>
+        {/* ── COMBINED DARK HERO ── */}
+        <section className="explore-hero-combined">
 
-            <div className="flagship-actions">
-              <button type="button">Start Learning</button>
-              <button type="button" className="outline-btn">
-                View Course Outline
-              </button>
+          {/* Flagship course */}
+          <div className="flagship-course-inner">
+            <div className="fc-left">
+              <div className="fc-badges">
+                <span className="fc-badge-featured">⭐ Featured Course</span>
+                <span className="fc-badge-new">New</span>
+              </div>
+
+              <h2>AI Career Starter Program</h2>
+
+              <p>
+                Learn how to use AI tools, discover your career path, and build
+                practical digital skills for modern work — beginner friendly,
+                self-paced.
+              </p>
+
+              <div className="fc-stats">
+                <div className="fc-stat">
+                  <strong>60 min</strong>
+                  <span>Duration</span>
+                </div>
+                <div className="fc-stat-divider" />
+                <div className="fc-stat">
+                  <strong>Beginner</strong>
+                  <span>Level</span>
+                </div>
+                <div className="fc-stat-divider" />
+                <div className="fc-stat">
+                  <strong>⭐ 4.9</strong>
+                  <span>Rating</span>
+                </div>
+                <div className="fc-stat-divider" />
+                <div className="fc-stat">
+                  <strong>Self-paced</strong>
+                  <span>Format</span>
+                </div>
+              </div>
+
+              <div className="fc-actions">
+                <button type="button" className="fc-btn-primary">
+                  Start Learning
+                </button>
+                <button type="button" className="fc-btn-outline">
+                  View Course Outline
+                </button>
+              </div>
+            </div>
+
+            <div className="fc-right">
+              <div className="fc-card-label">What you will learn</div>
+
+              <div className="fc-point">
+                <span className="fc-check">✓</span>
+                <div>
+                  <strong>AI tools for productivity</strong>
+                  <p>Use AI to study faster, plan better, and save time daily.</p>
+                </div>
+              </div>
+
+              <div className="fc-point">
+                <span className="fc-check">✓</span>
+                <div>
+                  <strong>Career path discovery</strong>
+                  <p>Identify the right direction based on your strengths.</p>
+                </div>
+              </div>
+
+              <div className="fc-point">
+                <span className="fc-check">✓</span>
+                <div>
+                  <strong>Beginner digital skills</strong>
+                  <p>Build confidence with essential tools used in every industry.</p>
+                </div>
+              </div>
+
+              <div className="fc-point">
+                <span className="fc-check">✓</span>
+                <div>
+                  <strong>Job and freelance readiness</strong>
+                  <p>Prepare to apply, pitch, and work in the modern economy.</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="flagship-right">
-            <h3>What this course helps with</h3>
-            <div className="flagship-point">🤖 AI tools for productivity</div>
-            <div className="flagship-point">🧭 Career path discovery</div>
-            <div className="flagship-point">📚 Beginner digital skills</div>
-            <div className="flagship-point">💼 Job and freelance readiness</div>
-          </div>
-        </section>
-
-        <section className="explore-hero small-hero">
-          <div>
-            <span className="explore-badge">Course Catalogue</span>
-            <h1>Explore all courses</h1>
-            <p>
-              Search through practical courses and filter by category to find
-              the path that fits your goals.
-            </p>
-
-            <div className="explore-search">
+          {/* Search bar — flows naturally below */}
+          <div className="hero-search-bar">
+            <form className="flagship-search" onSubmit={handleSearch}>
               <input
                 type="text"
                 placeholder="Search courses, skills, or categories..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-              <button type="button">Search</button>
+              <button type="submit">Search Courses</button>
+            </form>
+
+            <div className="flagship-chips">
+              {heroChips.map((chip) => (
+                <button
+                  key={chip.category}
+                  type="button"
+                  className={`flagship-chip${activeCategory === chip.category ? " chip-active" : ""}`}
+                  onClick={() => handleChipClick(chip.category)}
+                >
+                  {chip.label}
+                </button>
+              ))}
             </div>
           </div>
+
         </section>
+
+        <div className="catalogue-section" ref={catalogueRef}>
+          <div className="catalogue-header">
+            <div className="catalogue-header-left">
+              <span>Course Catalogue</span>
+              <h2>Browse all courses</h2>
+              <p>Filter by category, level, or search above to find what fits your goals.</p>
+            </div>
+            <div className="catalogue-header-right">
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="catalogue-sort"
+              >
+                <option value="Popular">Sort: Popular</option>
+                <option value="Newest">Newest</option>
+                <option value="Highest rated">Highest rated</option>
+                <option value="Beginner friendly">Beginner friendly</option>
+              </select>
+            </div>
+          </div>
 
         <section className="courses-layout">
           <aside className="filter-sidebar">
@@ -176,23 +286,10 @@ function ExploreCoursesContent() {
 
           <section className="courses-main">
             <div className="courses-header">
-              <div>
-                <span>Course Catalogue</span>
-                <h2>
-                  {filteredCourses.length}{" "}
-                  {filteredCourses.length === 1 ? "course" : "courses"} found
-                </h2>
-              </div>
-
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-              >
-                <option value="Popular">Sort by: Popular</option>
-                <option value="Newest">Newest</option>
-                <option value="Highest rated">Highest rated</option>
-                <option value="Beginner friendly">Beginner friendly</option>
-              </select>
+              <p className="courses-count">
+                <strong>{filteredCourses.length}</strong>{" "}
+                {filteredCourses.length === 1 ? "course" : "courses"} found
+              </p>
             </div>
 
             <div className="courses-grid">
@@ -230,6 +327,7 @@ function ExploreCoursesContent() {
             </div>
           </section>
         </section>
+        </div>
 
         <section className="course-closing">
           <span>Still unsure?</span>

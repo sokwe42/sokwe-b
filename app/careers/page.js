@@ -27,28 +27,40 @@ export default function Careers() {
 
       <main className="jobs-page">
         <section className="jobs-hero">
-          <div className="jobs-hero-content">
-            <span>Careers</span>
-            <h1>Join Sokwe-b and help learners build better futures</h1>
-            <p>
-              We are building a platform that supports learning, career growth,
-              AI coaching, and practical skill development.
-            </p>
+          <div className="jobs-hero-top">
+            <div className="jobs-hero-content">
+              <span>Careers at Sokwe-b</span>
+              <h1>Join us and help learners build better futures</h1>
+              <p>
+                We are building a platform that supports learning, career growth,
+                AI coaching, and practical skill development across Africa.
+              </p>
 
-            <div className="jobs-hero-buttons">
-              <button type="button">View Open Roles</button>
-              <button type="button" className="outline-btn">
-                Send Application
-              </button>
+              <div className="jobs-hero-buttons">
+                <button type="button">View Open Roles</button>
+                <button type="button" className="outline-btn">
+                  Send Application
+                </button>
+              </div>
             </div>
           </div>
 
-          <div className="jobs-hero-card">
-            <h3>Who we’re looking for</h3>
-            <div className="job-check active">✓ Creative educators</div>
-            <div className="job-check">✓ Career mentors</div>
-            <div className="job-check">✓ AI and digital skills trainers</div>
-            <div className="job-check">✓ Passionate team players</div>
+          <div className="jobs-hero-cards">
+            <div className="jobs-mini-card">
+              <span>🚀</span>
+              <strong>Open Roles</strong>
+              <p>Join our growing team across content, tech, and mentorship.</p>
+            </div>
+            <div className="jobs-mini-card">
+              <span>🌍</span>
+              <strong>Our Culture</strong>
+              <p>Remote-first, mission-driven, and collaborative by default.</p>
+            </div>
+            <div className="jobs-mini-card">
+              <span>💡</span>
+              <strong>Why Sokwe-b</strong>
+              <p>Real impact on real learners across Africa, every day.</p>
+            </div>
           </div>
         </section>
 

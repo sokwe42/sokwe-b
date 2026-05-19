@@ -33,9 +33,12 @@ export default function AICoaching() {
 
       <main className="ai-page">
         <section className="ai-hero">
-          <div className="ai-hero-content">
+          <div className="ai-hero-center">
             <span>AI Coaching</span>
-            <h1>Get guided support for learning, work, and career growth</h1>
+            <h1>
+              Get guided support for<br />
+              <span className="ai-gradient-text">learning &amp; career growth</span>
+            </h1>
             <p>
               Sokwe-b AI Coaching helps learners understand digital tools,
               improve productivity, and make smarter career decisions with
@@ -50,13 +53,28 @@ export default function AICoaching() {
             </div>
           </div>
 
-          <div className="ai-hero-card">
-            <h3>What coaching can help you with</h3>
-
-            <div className="ai-check active">✓ Choosing the right AI tools</div>
-            <div className="ai-check">✓ Learning prompt writing</div>
-            <div className="ai-check">✓ Improving productivity</div>
-            <div className="ai-check">✓ Career planning with AI</div>
+          <div className="ai-hero-pills">
+            <div className="ai-pill">
+              <span>🤖</span>
+              <div>
+                <strong>AI Tools</strong>
+                <p>Productivity coaching</p>
+              </div>
+            </div>
+            <div className="ai-pill">
+              <span>🧠</span>
+              <div>
+                <strong>Prompt Writing</strong>
+                <p>Get better answers</p>
+              </div>
+            </div>
+            <div className="ai-pill">
+              <span>💼</span>
+              <div>
+                <strong>Career Support</strong>
+                <p>CVs, interviews, freelancing</p>
+              </div>
+            </div>
           </div>
         </section>
 

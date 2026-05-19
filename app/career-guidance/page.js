@@ -36,6 +36,37 @@ export default function CareerGuidance() {
 
       <main className="career-page">
         <section className="career-hero">
+          <div className="career-hero-card">
+            <h3>Your path to clarity</h3>
+
+            <div className="journey-step">
+              <div className="journey-step-num active-step">01</div>
+              <div className="journey-step-line" />
+              <div className="journey-step-body">
+                <strong>Share your interests</strong>
+                <p>Tell us what you enjoy and what you want to achieve.</p>
+              </div>
+            </div>
+
+            <div className="journey-step">
+              <div className="journey-step-num">02</div>
+              <div className="journey-step-line" />
+              <div className="journey-step-body">
+                <strong>Get matched</strong>
+                <p>Receive career directions that fit your profile.</p>
+              </div>
+            </div>
+
+            <div className="journey-step">
+              <div className="journey-step-num">03</div>
+              <div className="journey-step-line last" />
+              <div className="journey-step-body">
+                <strong>Start learning</strong>
+                <p>Follow a course path built around your goals.</p>
+              </div>
+            </div>
+          </div>
+
           <div className="career-hero-content">
             <span>Career Guidance</span>
 
@@ -51,25 +82,6 @@ export default function CareerGuidance() {
               <button type="button" className="outline-btn">
                 Explore Career Paths
               </button>
-            </div>
-          </div>
-
-          <div className="career-hero-card">
-            <h3>Your guidance journey</h3>
-
-            <div className="journey-item active">
-              <span>01</span>
-              <p>Tell us what you enjoy and what you want to achieve.</p>
-            </div>
-
-            <div className="journey-item">
-              <span>02</span>
-              <p>Get matched with possible career directions.</p>
-            </div>
-
-            <div className="journey-item">
-              <span>03</span>
-              <p>Follow a learning path with recommended courses.</p>
             </div>
           </div>
         </section>

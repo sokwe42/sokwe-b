@@ -44,12 +44,23 @@ export default function ForBusinesses() {
             </div>
           </div>
 
-          <div className="business-hero-card">
-            <h3>Business learning solutions</h3>
-            <div className="business-check active">✓ Employee upskilling</div>
-            <div className="business-check">✓ AI adoption support</div>
-            <div className="business-check">✓ Custom training content</div>
-            <div className="business-check">✓ Team learning plans</div>
+          <div className="business-stats-grid">
+            <div className="biz-stat">
+              <strong>2,000+</strong>
+              <span>Learners trained</span>
+            </div>
+            <div className="biz-stat">
+              <strong>500+</strong>
+              <span>Courses available</span>
+            </div>
+            <div className="biz-stat">
+              <strong>20+</strong>
+              <span>Career paths</span>
+            </div>
+            <div className="biz-stat">
+              <strong>AI</strong>
+              <span>Coaching support</span>
+            </div>
           </div>
         </section>
 
