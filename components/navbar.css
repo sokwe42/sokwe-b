@@ -3,9 +3,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: transparent;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: #040d1a;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
