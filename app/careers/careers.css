@@ -127,13 +127,13 @@
   background: #eef2ff;
 }
 
-.section-heading {
+.roles-section .section-heading {
   max-width: 740px;
   margin: 0 auto 40px;
   text-align: center;
 }
 
-.section-heading span {
+.roles-section .section-heading span {
   display: inline-block;
   color: #4f46e5;
   font-weight: 800;
@@ -143,14 +143,14 @@
   margin-bottom: 12px;
 }
 
-.section-heading h2 {
+.roles-section .section-heading h2 {
   font-size: clamp(1.9rem, 4vw, 3rem);
   color: #060920;
   margin-bottom: 12px;
   line-height: 1.1;
 }
 
-.section-heading p {
+.roles-section .section-heading p {
   color: #374151;
   line-height: 1.75;
 }
@@ -284,13 +284,13 @@
     #060920;
 }
 
-.form-container {
+.application-section .form-container {
   max-width: 800px;
   margin: auto;
   text-align: center;
 }
 
-.form-container span {
+.application-section .form-container span {
   display: inline-block;
   color: #a5b4fc;
   font-weight: 800;
@@ -300,14 +300,14 @@
   margin-bottom: 12px;
 }
 
-.form-container h2 {
+.application-section .form-container h2 {
   color: white;
   font-size: clamp(1.9rem, 4vw, 2.8rem);
   margin: 0 0 10px;
   line-height: 1.1;
 }
 
-.form-container p {
+.application-section .form-container p {
   color: rgba(255,255,255,0.6);
   margin-bottom: 28px;
   line-height: 1.7;

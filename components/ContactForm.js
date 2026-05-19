@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "" });
   const [status, setStatus] = useState("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -66,14 +66,6 @@ export default function ContactForm() {
         onChange={handleChange}
         required
       />
-      <textarea
-        name="message"
-        placeholder="Any questions or comments? (optional)"
-        rows={3}
-        value={form.message}
-        onChange={handleChange}
-      />
-
       {status === "error" && <p className="contact-error">{errorMsg}</p>}
 
       <button type="submit" disabled={status === "loading"}>

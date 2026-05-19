@@ -157,13 +157,13 @@
   background: #f5f3ff;
 }
 
-.section-heading {
+.guidance-section .section-heading {
   max-width: 740px;
   margin: 0 auto 40px;
   text-align: center;
 }
 
-.section-heading span {
+.guidance-section .section-heading span {
   display: inline-block;
   color: #4f46e5;
   font-weight: 800;
@@ -173,14 +173,14 @@
   margin-bottom: 12px;
 }
 
-.section-heading h2 {
+.guidance-section .section-heading h2 {
   font-size: clamp(1.9rem, 4vw, 3rem);
   color: #0e0b2e;
   margin-bottom: 12px;
   line-height: 1.1;
 }
 
-.section-heading p {
+.guidance-section .section-heading p {
   color: #4b5563;
   line-height: 1.7;
 }
@@ -334,13 +334,13 @@
   background: #f5f3ff;
 }
 
-.form-container {
+.career-form-section .form-container {
   max-width: 760px;
   margin: auto;
   text-align: center;
 }
 
-.form-container span {
+.career-form-section .form-container span {
   display: inline-block;
   color: #4f46e5;
   font-weight: 800;
@@ -350,14 +350,14 @@
   margin-bottom: 12px;
 }
 
-.form-container h2 {
+.career-form-section .form-container h2 {
   color: #0e0b2e;
   font-size: clamp(1.9rem, 4vw, 2.8rem);
   margin: 0 0 10px;
   line-height: 1.1;
 }
 
-.form-container p {
+.career-form-section .form-container p {
   color: #4b5563;
   margin-bottom: 28px;
   line-height: 1.7;

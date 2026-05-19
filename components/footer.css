@@ -56,7 +56,8 @@
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+  min-height: 258px;
 }
 
 .contact-form h4 {
@@ -70,8 +71,7 @@
   margin-bottom: 4px;
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-form input {
   width: 100%;
   padding: 10px 14px;
   border-radius: 10px;
@@ -80,17 +80,14 @@
   color: white;
   font-size: 0.9rem;
   outline: none;
-  resize: none;
   transition: border-color 0.2s ease;
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
+.contact-form input::placeholder {
   color: rgba(255,255,255,0.38);
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form input:focus {
   border-color: rgba(37,99,235,0.6);
 }
 

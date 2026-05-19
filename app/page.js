@@ -254,12 +254,12 @@ export default function Home() {
         {/* STATS */}
         <section className="stats-section">
           <div>
-            <h2>" 2,000+ "</h2>
+            <h2> 2,000+ </h2>
             <p>Learners guided</p>
           </div>
 
           <div>
-            <h2>" 500+ "</h2>
+            <h2> 500+ </h2>
             <p>Courses available</p>
           </div>
 
